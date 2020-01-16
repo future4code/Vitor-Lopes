@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ 
+  .header   {
+    margin: 0px;
+    width: 100vw;
+    height: 5vh;
+    background: orange;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .main {
+    margin: 2vh;
+    height: 81vh;
+    background: rgb(252, 248, 240);
+  }
+  
+
+  .footer   {
+    margin: 0px;
+    width: 100vw;
+    height: 10vh;
+    background: orange;
+  }
+
+#logo {
+  color: rgb(104, 68, 1);
+  font: bold 2em Roboto;
+  padding-right: 25vw;
+}
+
+.header button{
+  border: none;
+  margin: 0px;
+  height: 5vh;
+  width: 7em;
+  background: orange;
+  font: bold 1em Roboto;
+  color: rgb(255, 255, 255);
+}
+  
+  h1  {
+    color: rgb(122, 80, 1);
+  }
+
+  h2  {
+    text-align: center;
+
+  }
+
+  table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: auto;
+  }
+
+  #enviar {
+  border: none;
+  margin: 0px;
+  height: 5vh;
+  width: 7em;
+  background: orange;
+  font: bold 1em Roboto;
+  color: rgb(255, 255, 255);
+  
+  }
+
+
+#obras  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

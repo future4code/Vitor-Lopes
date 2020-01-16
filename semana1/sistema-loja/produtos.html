@@ -6,40 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Produtos</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+
 </head>
 
 <body>
-    <div align="center">
-        <h1>LOJA LOPES</h1>
-        <h2>Catálogo de Produtos</h2>
+    <div class="header" style="">
+        <h1 id="logo">LOJA LOPES</h1>
+
+        <a href="Index.html"><button>Home</button></a>
+        <a href="controledeestoque.html"><button>Estoque</button></a>
+        <a href="produtos.html"><button>Adicionar</button></a>
+        <a href="funcionarios.html"><button>Funcionários</button></a>
+
     </div>
-    <a href="Index.html"><button>Retornar ao menu principal.</button></a>
-    <br><br><br>
 
-    <form>
-        <label for="nome">Nome</label>
-        <br>
-        <input type="text" name="nome" id="nome">
-    </form>
+    <div class="main">
 
-    <form>
-        <label for="nome">Descrição</label>
-        <br>
-        <input type="text" name="nome" id="nome">
-    </form>
+        <h2>Adicione o produto preenchendo os campos abaixo</h2>
+        <br><br>
 
-    <form>
-        <label for="nome">Preço</label>
-        <br>
-        <input type="text" name="nome" id="nome">
-    </form>
+        <div class="formulario">
+            <form>
+                <label for="nome">Nome</label>
+                <br>
+                <input type="text" name="nome" id="nome">
+            </form>
+            <br>
 
-    <form>
-        <label for="nome">Quantidade</label>
-        <br>
-        <input type="number" name="nome" id="nome">
-    </form>
-    <button type="submit">Enviar</button>
+            <form>
+                <label for="nome">Descrição</label>
+                <br>
+                <input type="text" name="nome" id="nome">
+            </form>
+            <br>
+
+            <form>
+                <label for="nome">Preço</label>
+                <br>
+                <input type="text" name="nome" id="nome">
+            </form>
+            <br>
+
+            <form>
+                <label for="nome">Quantidade</label>
+                <br>
+                <input type="number" name="nome" id="nome">
+            </form>
+            <br>
+            
+            <button id="enviar" type="submit">Enviar</button>
+        </div>
+    </div>
+
+    <div class="footer"></div>
 
 
 </body>
