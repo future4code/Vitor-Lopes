@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ 
+  .header   {
+    margin: 0px;
+    width: 100vw;
+    height: 10vh;
+    background: rgb(29, 161, 243);
+    position: relative;
+  }
+
+ /* .header   {
+    margin: 0px;
+    width: 100vw;
+    height: 10vh;
+    background: orange;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }*/
+
+
+
+  .main {
+    margin: 0;
+    height: 85vh;
+    background: rgb(200, 221, 245);
+  }
+  
+
+  .footer   {
+    margin: 0px;
+    width: 100vw;
+    height: 5vh;
+    background: rgb(29, 161, 243);
+  }
+
+#logo {
+  
+    height: 10vh;
+    padding: 1vh 0;
+    font: bold 7vh Roboto;
+    transition: color 0.4s ease 0s;
+    position: fixed;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.header button{
+    border: none;
+    margin: 0px;
+    height: 10vh;
+    width: 7em;
+    background: rgb(29, 161, 243);
+    font: bold 2vh Roboto;
+    color: rgb(255, 255, 255);
+    transition: color 0.8s ease 0s;
+    display: inline-block;
+    float: right;   /*moveu os botões para a direita*/
+    white-space: nowrap;
+
+}
+  
+  h1, span  {
+    color: rgb(255, 255, 255);
+  }
+
+  h2  {
+    text-align: center;
+
+  }
+
+  table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: auto;
+  }
+
+  #enviar {
+  border: none;
+  margin: 0px;
+  height: 5vh;
+  width: 7em;
+  background: orange;
+  font: bold 1em Roboto;
+  color: rgb(255, 255, 255);
+  
+  }
+
+
+  #obras  {
+    padding: 200px;
+    
+  }
+  #obras li {
+    margin: 30px;
+    font: bold 1em Roboto;
+  }
+
+
+.linkedin-button, .facebook-button, .gmail-button  {
+    display: inline-block;            
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 13px 40px 10px 10px;
+    float: right;
+}
+#github-button  {
+    display: inline-block;            
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 13px 40px 10px 10px;
+    float: right;
+}
+
+
+.linkedin-button    {
+    margin-right: 100px;
+}
+#meencontre {
+    float: right;
+    font: bold 1em Roboto;
+    padding: 13px 20px 10px 0;
+    transition: color 0.8s ease 0s;
+
+}
+
+.site-vendas-fotos  {
+    width: 400px;
+    height: 400px;
+}
+
+
+th  {
+    padding-right: 100px;
+}
+
+td  {
+    padding-bottom: 50px;
+}
+
+#descricao-home     {
+    font: 1em Roboto;
+}
