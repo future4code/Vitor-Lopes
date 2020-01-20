@@ -151,3 +151,8 @@ td button:hover {
 #back-button:hover {
     background-color: #635a3d
 }
+
+#campo-de-busca {
+    border: none;
+    border-bottom: 2px solid black;
+}
