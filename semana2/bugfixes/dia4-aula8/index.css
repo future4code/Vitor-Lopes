@@ -66,6 +66,10 @@ li {
     height: 15px;
 }
 
+td  {
+    text-align: center;
+}
+
 
 /** 
   *
