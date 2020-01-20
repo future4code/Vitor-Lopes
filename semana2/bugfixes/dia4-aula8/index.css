@@ -70,6 +70,11 @@ td  {
     text-align: center;
 }
 
+img {
+    width: 80px;
+    height: auto;
+}
+
 
 /** 
   *
