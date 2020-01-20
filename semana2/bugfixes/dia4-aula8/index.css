@@ -57,6 +57,11 @@ div img {
     text-align: center;
 }
 
+li {
+    display: list-item;
+    list-style-position: inside;
+  }
+
 .icone {
     height: 15px;
 }
