@@ -20,6 +20,7 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    outline-style: none;
 }
 
 button:focus {
