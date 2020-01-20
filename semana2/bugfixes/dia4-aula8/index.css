@@ -27,15 +27,12 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 70px;
+    height: auto;
 }
 
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    background: black;
 }
 
 .botao-amarelo {
@@ -64,16 +61,13 @@ li {
 
 .icone {
     height: 15px;
+    width: 15px;
 }
 
 td  {
     text-align: center;
 }
 
-img {
-    width: 70px;
-    height: auto;
-}
 
 
 /** 
