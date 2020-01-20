@@ -44,7 +44,7 @@ div>p:first-child {
     border-radius: 5px;
     font-size: 20px;
     color: white;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .botao-amarelo:hover {
@@ -93,7 +93,7 @@ td  {
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding: 100px 0;
+    padding: 50px 0;
     font-size: 60px;
 }
 
