@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+img{
+    max-width: 80vw;
+    max-height:auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: fit-content;
+}
+
+@media screen and (max-height: 550px) {
+    img{ 
+        max-height: auto;
+        max-width: 40%;
+    }
+}
+
+h2  {
+    margin: 0px; 
+    min-height: fit-content; 
+    font: bold 2em roboto;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+}
+
+h4 {
+    margin: 0px;
+    padding-right: 1em;
+    height: fit-content;
+    background-color: #595E96;
+    color: rgb(255, 255, 255);
+    font: bold italic 1em Roboto;
+    text-align: right;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 0.5;
+}   
+
+.header   {
+    margin: 0px;
+    width: 100vw;
+    height: 5vh;
+    background: #CD4E00;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: center;
+  }
+
+.main   {
+    background-color: #595E96;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+ }
+
+.footer {
+    margin: 0px;
+    width: 100%;
+    height: 15vh;
+    background:	#D8D8D8;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.formulario {
+    padding: 0mm;
+    margin: 0px;    
+    height: 40px ;
+    width: 19em;
+    font: bold;
+}
+
+.btsend {
+    border: 1px;
+    margin: -4px;
+    height: 3em;
+    width: 6em;
+    background: #CD4E00;
+    font-family: Roboto;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+    .btsend:hover {
+    background-color:rgb(153, 67, 13);
+    }
+
+.bthome {
+    border: none;
+    margin: 0px;
+    height: 5vh;
+    width: 7em;
+    background: #CD4E00;
+    font: bold 1em Roboto;
+    color: rgb(255, 255, 255);
+}
+
+    .bthome:hover   {
+    background-color:rgb(153, 67, 13);
+    }
+
+.btcursos {
+    border: none;
+    margin: 0px;
+    height: 5vh;
+    width: 7em;
+    background: #CD4E00;
+    font: bold 1em Roboto;
+    color: rgb(255, 255, 255);
+}
+
+    .btcursos:hover {
+    background-color:rgb(153, 67, 13);
+    }
+
+.btcontato {
+    border: none;
+    margin: 0px;
+    margin-right: 1em;
+    height: 5vh;
+    width: 7em;
+    background: #CD4E00;
+    font: bold 1em Roboto;
+    color: rgb(255, 255, 255);
+}
+
+    .btcontato:hover   {
+    background-color:rgb(153, 67, 13);
+    }

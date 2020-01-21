@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Future4</title>
+    <link rel="stylesheet"  href="styles/style.css"/>
+    
+</head>
+<body>
+        
+    <div class="header">
+        <input type="button" class="btcontato" id="btcontato" value="CONTATO" onclick="CONTATO()">
+        <input type="button" class="btcursos" id="btcursos" value="CURSOS" onclick="CURSOS()">
+        <input type="button" class="bthome" id="bthome" value="HOME" onclick="HOME()">
+
+    </div>
+    <div class="main">
+    
+        <h2 id="welcome">Projeto Seletivo Future4</h2>  
+        
+        <div class="container">
+            <img src="Imagem/future4.jpeg" alt="Future4Logo" class="logo" width="850">
+        </div>      
+    
+        <h4>Turma Web Full Stack</h4>
+
+    </div>
+    
+    <div class="footer">
+        
+        <form>
+            <input type="email" class="formulario" id="formulario1"  placeholder="Coloque seu e-mail para contato! :)">
+            <input type="button" onclick="send(formulario1)" class="btsend" id="btsend" value="ENVIAR" >
+        </form>
+    </div>
+
+<script>
+        
+    function send(msg) {
+        
+        //separa o conteudo digitado em usuário e domínio
+        user = formulario1.value.substring(0, formulario1.value.indexOf("@"));
+        dom = formulario1.value.substring(formulario1.value.indexOf("@")+ 1, formulario1.value.length);
+
+        //condições para validar mail
+        if ((user.length >=1) &&        //user>= 1 caractere
+        (dom.length >=3) &&         //dom >= 3 caracteres
+        (user.search("@")==-1) &&   //user ñ pode ter @
+        (dom.search("@")==-1) &&    //dom ñ pode ter @
+        (user.search(" ")==-1) &&   //user ñ pode conter espaço
+        (dom.search(" ")==-1) &&    //dom não pode conter espaço
+        (dom.search(".")!=-1) &&    //dom precisa ter um ponto(not equal -1)
+        (dom.indexOf(".") >=1)&&    //posição do primeiro ponto precisa ser >=1 
+        (dom.lastIndexOf(".") < dom.length - 1))    {   //lastIndexOf retorna posição da ultima ocorrencia do ponto. 
+        
+        alert(`O email ${document.getElementById("formulario1").value} foi enviado.`);
+        document.getElementById('welcome').innerHTML = `Seja bem vindo, ${document.getElementById("formulario1").value}`;
+        }
+        
+        else{
+        alert("Email invalido.");
+        }
+    }
+        
+    
+
+
+</script>
+
+</body>
+</html>
