@@ -1,0 +1,146 @@
+*   {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* #body .border   {
+    width: 380px;
+    float: left;
+    min-width: 100px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+} */
+
+/* @media (max-width: 1000px) {
+    .body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .body {
+        grid-template-columns: 1fr;
+    } */
+
+
+.body   {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 95%);
+    grid-gap: 10px;
+}
+
+.border {
+    border: 1px solid black;
+    display: flex;
+    position: relative;
+}
+
+/* .border::before{
+    counter-increment: element;
+    content:counter(element);
+    position: absolute;
+    bottom: 10px;
+    left: 6px;
+} */
+
+#header {
+    height: 30vw;
+    /* height: 100%; */
+    background-color: red;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+#item1  {
+    background-color: blue;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#item2   {
+    background-color: yellow;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#item3   {
+    background-color: green;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#item4  {
+    background-color: blue;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#item5   {
+    background-color: yellow;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#item6   {
+    background-color: green;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#item7  {
+    background-color: black;
+    grid-column: 1;
+    grid-row: 4/6;
+    color: white;
+}
+
+#item8  {
+    background-color: black;
+    grid-column: 3;
+    grid-row: 4/6;
+    color: white;
+}
+
+#item9  {
+    background-color: grey;
+    grid-column: 1;
+    grid-row: 6;
+}
+
+#item10  {
+    background-color: grey;
+    grid-column: 2;
+    grid-row: 6;
+}
+
+#item11  {
+    background-color: grey;
+    grid-column: 3;
+    grid-row: 6;
+}
+
+@media all and (max-width:900px)    {
+    #item3, #item6, #item11 {
+        grid-column-start: auto;
+    }
+    
+    .body:before   {
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+@media all and (min-width:900px)    {
+    #item3, #item6, #item11 {
+        grid-column-start: auto;
+        grid-row-start: auto;
+    }
+    
+    .body::after   {
+        grid-template-columns: 1fr 1fr;
+    }
+}
