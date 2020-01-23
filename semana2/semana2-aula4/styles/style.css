@@ -1,0 +1,108 @@
+body { 
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* HEADER & FOOTER 
+      PADRÃO  */
+footer   {
+    margin: 0px;
+    width: 100vw;
+    height: 10vh;
+    background: orange;
+    bottom: 0;
+  }
+
+header  {
+    margin: 0px;
+    width: 100vw;
+    height: 12vh;
+    background: orange;
+    }
+
+#logo {
+    height: 10vh;
+    font: bold 5vh Roboto;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+
+}
+
+header button{
+    border: none;
+    margin: 0px;
+    height: 12vh;
+    width: 7em;
+    background: orange;
+    font: bold 2vh Roboto;
+    color: white;
+    display: inline-block;
+    float: right;   /*moveu os botões para a direita*/
+    white-space: nowrap;
+}
+
+input   {
+    margin-left: 30%;
+}
+
+/* INDEX */
+.master-container{
+    display: grid;
+    gap: 0;
+    align-items: stretch;
+    justify-items: stretch;
+    min-height: 74.7vh;
+}
+
+div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    border: 1px solid black;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+#main-container {
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: stretch;
+    align-items: stretch;
+    border: none;
+}
+
+/*IMAGEM FIT */
+video{
+    width: 100%;
+    height: 100%;
+    max-height: max-content;
+    max-width: max-content;
+    object-fit: cover;
+}
+
+/* PLAYER PRINCIPAL */
+#main-player    {
+margin: 0 30vw;
+border: none;
+}
+
+.master-container2  {
+    display: flex;
+    align-items: stretch;
+    justify-items: center;
+    min-height: 64.7vh;
+    position:relative;
+}
+
+#descricao  {
+    height: 10vh;
+    border: none;
+}
+
