@@ -1,7 +1,7 @@
 
 //INTERPRETAÇÃO DE CÓDIGO
 
-//EXERCÍCIO1
+// //EXERCÍCIO1
 // const bool1 = true
 // const bool2 = false
 // const bool3 = !bool2 //true
@@ -20,7 +20,7 @@
 
 // console.log("e. ", typeof resultado)//boolean
 
-//EXERCÍCIO2
+// //EXERCÍCIO2
 // const bool1 = true
 // const bool2 = false
 // const bool3 = !bool2
@@ -60,10 +60,34 @@
                 false
                 boolean
 */
-//----------------------------
 
+//Exercícios de escrita de código
 
+//EXERCÍCIO1
 
+//KELVIN TO FAHRENHEIT
+let GRAUS_FAHRENHEIT = 77
+let KELVIN
+(KELVIN) = (GRAUS_FAHRENHEIT - 32)*5/9 + 273.15
 
+console.log(GRAUS_FAHRENHEIT + "ºF equivalem a " + KELVIN + "ºK")
 
+//FAHRENHEIT TO C
+let GRAUS_CELSIUS2 = 80
+let GRAUS_FAHRENHEIT2
+let KELVIN2
+GRAUS_FAHRENHEIT2 = (GRAUS_CELSIUS2)*9/5 + 32
+KELVIN2 = (GRAUS_FAHRENHEIT2 - 32)*5/9 + 273.15
 
+console.log(GRAUS_CELSIUS2 + "ºC equivalem a "+ GRAUS_FAHRENHEIT2 + "ºF e " + KELVIN2 + "ºK" )
+
+//Altere o último item para que o usuário insira o valor em graus 
+//Celsius que ele deseja converter.
+const GRAUS_CELSIUS3 = prompt  ("Digite a temperatuca em Celcius")
+let GRAUS_FAHRENHEIT3
+let KELVIN3
+GRAUS_FAHRENHEIT3 = (GRAUS_CELSIUS3)*9/5 + 32
+KELVIN3 = (GRAUS_FAHRENHEIT3 - 32)*5/9 + 273.15
+
+console.log(GRAUS_CELSIUS3 + "ºC equivalem a "+ GRAUS_FAHRENHEIT3 + "ºF e " + KELVIN3 + "ºK" )
+window.alert(GRAUS_CELSIUS3 + "ºC equivalem a "+ GRAUS_FAHRENHEIT3 + "ºF e " + KELVIN3 + "ºK")
