@@ -98,10 +98,13 @@ no log*/
 
 /////_________EXERCÍCIO 5__________/////
 
+//link para o diagrama logo abaixo
+//https://drive.google.com/file/d/1SUrqYnBRaMrsHrAq6LKuk8hdEKaZtd73/view?usp=sharing
+
 const vertebrado = prompt("Responda apenas com 'sim' ou 'não'. O animal Possui vértebras?")
 let mamifero
 let racional
-let penas //no
+let penas
 let terrestre
 let parteagua
 
@@ -163,22 +166,5 @@ switch (vertebrado) {
     default:
         console.log("Comece novamente")
 }
-
-
-    ////////testes////////
-    // {
-    //     let mamifero = prompt("É mamífero?")
-    //     if(mamifero = "sim"){
-    //         console.log("É mamífero.")
-    //         let racional = prompt("é racional?")
-    //             if(racional = "sim"){
-    //                 console.log("É humano.")
-    //                 alert("É humano.")
-    //             }   
-    //     }   else if(racional = "não")    {
-    //         console.log("não é humano.")
-    //     }
-
-
 
 
