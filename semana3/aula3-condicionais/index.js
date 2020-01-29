@@ -75,54 +75,96 @@ no log*/
 // b- se os 3 numeros forem iguais, não apareceia nada no meu log
 // c- Indicado na linha 94 e 95.
 
-const num1 = prompt("digite um número:")
-const num2 = prompt("digite outro número:")
-const num3 = prompt("digite mais um número:")
+// const num1 = prompt("digite um número:")
+// const num2 = prompt("digite outro número:")
+// const num3 = prompt("digite mais um número:")
 
-if(num1<num2 && num2<num3)  {//123
-        console.log(num3,num2,num1)
-}   else if(num1<num3 && num3<num2) {//132
-        console.log(num2,num3,num1)
-}   else if(num2<num1 && num1<num3) {//213
-        console.log(num3,num1,num2)
-}   else if(num2<num3 && num3<num1) {//231
-        console.log(num1,num3,num2)
-}   else if(num3<num1 && num1<num2) {//312
-        console.log(num2,num1,num3)
-}   else if(num3<num2 && num2<num1) {//321
-        console.log(num1,num2,num3)
-}   else if(num1==num2==num3) {//números iguais
-        console.log("Todos os números são iguais, digite ao menos um número diferente.")
-        window.alert("Todos os números são iguais, digite ao menos um número diferente.")
-}
+// if(num1<num2 && num2<num3)  {//123
+//         console.log(num3,num2,num1)
+// }   else if(num1<num3 && num3<num2) {//132
+//         console.log(num2,num3,num1)
+// }   else if(num2<num1 && num1<num3) {//213
+//         console.log(num3,num1,num2)
+// }   else if(num2<num3 && num3<num1) {//231
+//         console.log(num1,num3,num2)
+// }   else if(num3<num1 && num1<num2) {//312
+//         console.log(num2,num1,num3)
+// }   else if(num3<num2 && num2<num1) {//321
+//         console.log(num1,num2,num3)
+// }   else if(num1==num2==num3) {//números iguais
+//         console.log("Todos os números são iguais, digite ao menos um número diferente.")
+//         window.alert("Todos os números são iguais, digite ao menos um número diferente.")
+// }
 
 /////_________EXERCÍCIO 5__________/////
 
-let vertebrado = prompt("Possui vértebras?")
+const vertebrado = prompt("Responda apenas com 'sim' ou 'não'. O animal Possui vértebras?")
 let mamifero
 let racional
 let penas //no
 let terrestre
 let parteagua
 
-    
-    switch(vertebrado)  {
-        case "sim":
-            console.log("é Vertebrado.")
-            let mamifero = prompt("É mamífero?")
-            switch(mamifero){
-                case "sim":
-                    console.log("é mamífero.")
-                    break
-            }
-            
 
-        case "não":
-            console.log("não é Vertebrado.")
-            break
-     
-    }
-    
+switch (vertebrado) {
+    case "sim":
+        console.log("é Vertebrado.")
+        let mamifero = prompt("É mamífero?")
+        switch (mamifero) {
+            case "sim":
+                console.log("é mamífero.")
+                let racional = prompt("É racional?")
+                switch (racional) {
+                    case "sim":
+                        console.log("é Humano!")
+                        alert("é humano!")
+                        breakswitch(vertebrado)
+                    case "não":
+                        console.log("é irracional.")
+                }
+            case "não":
+                console.log("não é mamífero")
+                let penas = prompt("tem penas?")
+                switch (penas) {
+                    case "sim":
+                        console.log("é uma ave!")
+                        alert("é uma ave!")
+                        break
+                    case "não":
+                        console.log("não é uma ave.")
+                        let terrestre = prompt("é terrestre?")
+                        switch (terrestre) {
+                            case "sim":
+                                console.log("é terrestre")
+                                let parteagua = prompt("Passa parte da vida na agua?")
+                                switch (parteagua) {
+                                    case "sim":
+                                        console.log("é anfíbio!")
+                                        alert("é anfíbio!")
+                                        break
+                                    case "não":
+                                        console.log("é um réptil!")
+                                        alert("é um réptil!")
+                                        break
+                                }
+                                break
+                            case "não":
+                                console.log("é um peixe!")
+                                alert("é um peixe!")
+                                break
+                        }
+                }
+                break
+        }
+        break
+    case "não":
+        console.log("invertebrado")
+        alert("é invertebrado!")
+        break
+    default:
+        console.log("Comece novamente")
+}
+
 
     ////////testes////////
     // {
@@ -137,7 +179,7 @@ let parteagua
     //     }   else if(racional = "não")    {
     //         console.log("não é humano.")
     //     }
-    
+
 
 
 
