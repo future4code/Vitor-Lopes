@@ -105,7 +105,6 @@ let penas //no
 let terrestre
 let parteagua
 
-
 switch (vertebrado) {
     case "sim":
         console.log("é Vertebrado.")
