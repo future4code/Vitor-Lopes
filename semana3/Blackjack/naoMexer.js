@@ -4,13 +4,13 @@
 
 function comprarCarta() {
   // Cria array de cartas
-const cartas = ["2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K", "A"]
+const cartas = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
   // Cria array de naipes
   const naipes = ["♦️", "♥️", "♣️", "♠️"]
 
   // Sorteia uma carta
-  const numero = cartas[Math.floor(Math.random() * 12)]
+  const numero = cartas[Math.floor(Math.random() * 13)]
 
   // Sorteia um naipe
   const naipe = naipes[Math.floor(Math.random() * 4)]
