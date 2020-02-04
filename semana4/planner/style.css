@@ -1,0 +1,44 @@
+    body {
+        margin: 10px;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 10px;
+        justify-content: center;
+    }
+
+    main > div {
+        border: 1px solid black;
+        border-bottom: 0;
+        border-top: 0; 
+        min-height: 25vh;
+        margin: 15px;
+        padding: 10px;
+        height: 50vh;
+        min-width: 400px;
+        font-size: 30px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid black;
+    }
+
+    .container > * {
+        margin: 0 10px;
+    }
+    
+    .teste {
+        text-decoration: line-through;
+
+    }
+
+    /* .tarefa:active {
+        text-decoration: line-through
+    } */
+    
