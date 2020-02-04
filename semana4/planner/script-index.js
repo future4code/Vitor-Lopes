@@ -7,7 +7,7 @@ function criarTarefa() {
         alert("Preencha o campo Nova Tarefa para adicionar um item.")
     } else {
         tarefaNova.setAttribute("class", "tarefa")
-        // tarefaNova.setAttribute("onclick", )
+        tarefaNova.setAttribute("onclick", "tachado()")
 
         tarefaNova.textContent = item
         if (day == 'segunda') {
@@ -31,4 +31,8 @@ function criarTarefa() {
 
 function limparTarefa() {
     location.reload()
+}
+
+function tachado() {
+    event.target.style = "text-decoration:line-through"
 }
