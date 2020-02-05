@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week Planner</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script-index.js" defer></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <label for="nova-task">Nova Tarefa:</label>
+        <input type="text" name="novaTarefa" id="novaTarefa">>
+        <select name="diaDaSemana" id="diaDaSemana">
+            <option value="segunda">Segunda-Feira</option>
+            <option value="terca">Terça-Feira</option>
+            <option value="quarta">Quarta-Feira</option>
+            <option value="quinta">Quinta-Feira</option>
+            <option value="sexta">Sexta-Feira</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
+        <button onclick="criarTarefa();">Criar Tarefa!</button>
+        <button onclick="limparTarefa()">limpar tarefas</button>
+    </div>
+    <main>
+        <div id="segunda">
+            Segunda
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="terca">
+            Terça
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="quarta">
+            Quarta
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="quinta">
+            Quinta
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="sexta">
+            Sexta
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="sabado">
+            Sábado
+            <ul class="conteiner-dias"></ul>
+        </div>
+        <div id="domingo">
+            Domingo
+            <ul class="conteiner-dias"></ul>
+        </div>
+    </main>
+</body>
+
+</html>
