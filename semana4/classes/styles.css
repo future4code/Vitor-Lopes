@@ -1,0 +1,29 @@
+*   {
+ margin: 0;   
+}
+header, #conteiner, main {
+    display: flex;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+
+    height: 10vh;
+    width: 100vw;
+    background-color: cornflowerblue;
+}
+
+#pesquisar {
+    height: 2.5vh;
+}
+
+
+#conteiner {
+}
+
+main {
+    width: 100vw;
+    height: 30vh;
+    background-color: darkcyan;
+}
