@@ -1,7 +1,7 @@
 *   {
  margin: 0;   
 }
-header, #conteiner, main {
+header, #conteiner, main, section {
     display: flex;
 }
 
@@ -26,4 +26,25 @@ main {
     width: 100vw;
     height: 30vh;
     background-color: darkcyan;
+}
+
+#postagens {
+    width: 100vw;
+    min-height: 50vh;
+    background-color: rgb(248, 159, 159);
+
+}
+
+.novaPostagem {
+    display: flex;
+    padding: 30px ; 
+    margin: 0 20vw 30px 20vw;
+    align-items: center;
+    font: 20px arial black;
+    background-color: rgb(173, 168, 168);
+
+}
+
+footer  {
+    height: 10vh;
 }
