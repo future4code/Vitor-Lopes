@@ -14,24 +14,24 @@ if (confirm("Quer iniciar uma nova rodada?")) {
     let usuarioValor = 0
     let IAValor = 0
     let ok
-    let icarta = 0
+    let numeroDeCartas = 0
 
-    function teste(params) {
+    function cartasNaMao(params) {
         usuarioNomes = Array.from(cartasUsuario, ({ texto }) => texto)
         IAnomes = Array.from(cartaIA, ({ texto }) => texto)
     }
 
     //Cartas usuário
-    while (icarta < 2) {
+    while (numeroDeCartas < 2) {
         cartasUsuario.push(comprarCarta())
-        icarta++
+        numeroDeCartas++
     }
 
     //Cartas computador
-    icarta = 0
-    while (icarta < 2) {
+    numeroDeCartas = 0
+    while (numeroDeCartas < 2) {
         cartaIA.push(comprarCarta())
-        icarta++
+        numeroDeCartas++
     }
     somaUsuario()
     somaIA()
@@ -40,7 +40,7 @@ if (confirm("Quer iniciar uma nova rodada?")) {
     function somaUsuario() {
         for (let i = 0; i < cartasUsuario.length; i++) {
             usuarioValor += cartasUsuario[i].valor
-            teste()
+            cartasNaMao()
         }
     }
 
@@ -48,7 +48,6 @@ if (confirm("Quer iniciar uma nova rodada?")) {
     function somaIA() {
         for (let i = 0; i < cartaIA.length; i++) {
             IAValor += cartaIA[i].valor
-            // teste()
         }
     }
 
@@ -58,14 +57,14 @@ if (confirm("Quer iniciar uma nova rodada?")) {
     //função para comprar cartas do usuário
     function compraCartaUsuario() {
         cartasUsuario.push(comprarCarta())
-        teste()
+        cartasNaMao()
         usuarioValor = 0
         somaUsuario()
     }
     //função para comprar cartas do computador
     function comprarcartaIA() {
         cartaIA.push(comprarCarta())
-        teste()
+        cartasNaMao()
         IAValor = 0
         somaIA()
     }
