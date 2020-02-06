@@ -1,0 +1,26 @@
+main {
+    margin-top: 30vh;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section {
+    height: 40vh;
+    width: 16vw;
+    padding: 5vw;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    background-color: rgb(174, 191, 248);
+}
+
+input {
+    width: 15vw;
+}
+
+button {
+    text-align: left;
+    width: 100px;
+}

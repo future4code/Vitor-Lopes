@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="index.js"></script>
+  <link href="index.css" type="text/css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <main class="corpo">
+    <section id="controlador-de-despesa">
+      <h1>Controlador de Despesa</h1>
+      <div>Valor:<input type="number" id="novoValorDespesa"></div>
+      <span>Tipos de despesa</span>
+      <select id="seletorDespesas">
+        <option value="1"> Fixa</option>
+        <option value="2">Variável</option>
+        <option value="3">Estudos</option>
+      </select>
+      <div>Detalhes:<input type="text" id="detalhesDespesa"></div>
+      <button onclick="cadastrarDespesa()" id="cadastrarDespesa">Cadastrar Despesa</button>
+    </section>
+
+    <section id="despesas-detalhadas">
+      <h1>Despesas Detalhadas</h1>
+
+      <span>Tipo de despesa</span>
+      <select id="seletorDespesas">
+        <option value="1">Fixa</option>
+        <option value="2">Variável</option>
+        <option value="3">Estudos</option>
+      </select>
+      <div>Valor mínimo: <input type="number" id="valorMinimo"> </div>
+      <div>Valor máximo: <input type="number" id="valorMaximo"> </div>
+      <button id="filtrar" onclick="detalharDespesa()">Filtrar</button>
+      <button id="limparFiltro">Limpar Filtro</button>
+    </section>
+
+    <section id="extrato">
+      <h1>Valor total:</h1>
+    </section>
+
+  </main>
+</body>
+
+</html>
