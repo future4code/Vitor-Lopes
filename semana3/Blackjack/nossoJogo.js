@@ -22,7 +22,7 @@ if (confirm("Quer iniciar uma nova rodada?")) {
 
   if (carta1.valor + carta2.valor === carta1IA.valor + carta2IA.valor) {
     console.log("Empate!")
-  } else if (carta1 + carta2 < carta1IA + carta2IA) {
+  } else if (carta1.valor + carta2.valor < carta1IA.valor + carta2IA.valor) {
     console.log("Computador Ganhou!")
   } else {
     console.log("Usuário ganhou!")

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="styles.css" type="text/css" rel="stylesheet" />
+  <script src="script.js" defer></script>
+  <title>Blog do Vitor</title>
+</head>
+
+<body>
+
+  <header>
+
+    <span id="logo">Ana Maria Blog</span>
+    <input type="text" id="pesquisar">
+    <button id="botão1">pesquisar</button>
+
+  </header>
+
+  <div id="conteiner">
+
+    <main>
+
+      <h1>Deixe seu post:</h1>
+      <input name="titulo" type="text" class="inputPost" id="inputTitulo" placeholder="Título">
+      <input name="autor" type="text" class="inputPost" id="inputAutor" placeholder="Autor">
+      <textarea name="postagem" style="resize: none" class="inputPost" id="inputPostagem" cols="30" rows="10" placeholder="Digite seu texto aqui:"></textarea>
+      <input type="submit" onclick="postar()">
+    </main>
+
+
+  </div>
+
+  <div id="postagens">
+
+  </div>
+
+
+  <footer>rodapé</footer>
+
+</body>
+
+</html>

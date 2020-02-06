@@ -1,0 +1,85 @@
+*   {
+ margin: 0;   
+}
+header, #conteiner, main, section {
+    display: flex;
+}
+
+body {
+    background-color: rgb(100, 148, 237);
+}
+
+header {
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(245, 246, 248);
+    font: 8vh arial black;
+}
+
+#pesquisar {
+    height: 2.5vh;
+}
+
+main {
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 5vw;
+    width: 85vw;
+    height: 20vh;
+    background-color: rgb(238, 191, 101);
+    flex-wrap: wrap;
+}
+
+#postagens {
+    width: 85vw;
+    margin: 0 5vw;
+    min-height: 65vh;
+    background-color: rgb(230, 245, 148);
+
+}
+
+.novaPostagem {
+    display: flex;
+    padding: 30px ; 
+    margin: 0 20vw 30px 20vw;
+    align-items: center;
+    font: 20px arial black;
+    background-color: rgb(173, 168, 168);
+
+}
+
+footer  {
+    height: 5vh;
+    background-color: rgb(255, 255, 255);
+}
+
+/*campos de texto*/
+
+.inputPost {
+    height: 3vh;
+    width: 10vw;
+    min-width: 5vw;
+}
+
+#inputPostagem {
+    width: 30vw;
+    height: 10vh;
+    min-width: 10vw;
+}
+
+@media(max-width: 750px)  { 
+    header {
+        font: 3vh arial black;
+    }
+    .inputPost {
+        height: 2vh;
+        width: 70vw;
+    }
+    #inputPostagem {
+        width: 70vw;
+        height: 4vh;
+    }
+    
+}
