@@ -19,19 +19,33 @@
 
 ///////////___________EXERCÍCIO 3____________///////////
 /**
+ *  O Código não funcionava.
     o código deveria ter um valor para quantidadeDeNumerosPares por ser const.
     faltou incrementar 2 ao valor de i pois do jeito que estava, 0 x 2 sempre será 0
  */
-function LógicaDeProgramacaoEx03() {
-    const quantidadeDeNumerosPares = 2
+function LógicaDeProgramacaoEx03(quantidadeDeNumerosPares) {
+    // const quantidadeDeNumerosPares = 10
     let i = 0
     while (i <= quantidadeDeNumerosPares) {
         console.log(i)
         i += 2
     }
 }
+LógicaDeProgramacaoEx03()
 
 ///////////___________EXERCÍCIO 4____________///////////
+
+function LógicaDeProgramacaoEx04(a, b, c) {
+    if (a === b && b === c) {
+        console.log("Triângulo equilátero.")
+    } else if ((a === b || a === c | b === c) && (a !== b || a !== c || b !== c)) {
+        console.log("Triângulo isósceles.")
+    } else {
+        console.log("Triângulo escaleno.")
+    }
+}
+LógicaDeProgramacaoEx04()
+
 ///////////___________EXERCÍCIO 5____________///////////
 
 
