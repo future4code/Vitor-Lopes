@@ -102,17 +102,64 @@ function exerciciosDeFuncoes1(arrayDeNumeros) {
 
 let exerciciosDeFuncoes2 = () => {
     alert("Hello Future4!")
- }
- 
-//  let invoke = exerciciosDeFuncoes2()
+}
 
+//  let invoke = exerciciosDeFuncoes2()
 
 
 ///////////_______EXERCÍCIO DE OBJETOS_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
+
+/**
+ * array de objetos é um tipo de array que recebe 
+ *  podem ser utilizados quando temos varios valores que 
+ * façam sentido estar juntos. Por exemplo, ao armazenar 
+ * os dados de um cliente, é interessante que todos os 
+ * dados estejam em um sólugar a fim de facilitar o 
+ * acesso de forma organizada.
+ */
+
+
+
+
 ///////////___________EXERCÍCIO 2____________///////////
+
+
+function criaRetangulo(lado1, lado2) {
+    console.log(`largura ${lado1}, altura ${lado2}, perímetro ${2*(lado1 + lado2)} e área ${lado1* lado2}`)
+}
+
+// criaRetangulo(100, 20)
+
+
 ///////////___________EXERCÍCIO 3____________///////////
+
+function exerciciosDeObjetos3() {
+
+    const filmeFavorito = {
+        titulo: "O Senhor do Javascript",
+        ano: 2020,
+        diretor: "Vitor Lopes",
+        atores: ["Paula Arantes", "João Alves", "Goli", "Rebeca Cristino", "Artur Vilas Boas"]
+
+    }
+    console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de
+${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor}
+e estrelado por ${filmeFavorito.atores}!`)
+
+
+}
+// exerciciosDeObjetos3()
+
 ///////////___________EXERCÍCIO 4____________///////////
+
+
+
+
+
+
+
+
 
 ///////////__EXERCÍCIO DE FUNÇÕES DE ARRAY___///////////
 ///////////___________EXERCÍCIO 1____________///////////
