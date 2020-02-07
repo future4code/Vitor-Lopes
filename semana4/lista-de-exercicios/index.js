@@ -231,18 +231,31 @@ const pessoas = [
 	{ nome: "Artur", idade: 10, altura: 1.2},
 	{ nome: "Soter", idade: 70, altura: 1.9}
 ]
-function regraMontanhaRussa () {
+function podemIrMontanhaRussa () {
     
-    const regraAltura = pessoas.filter((tamanho, index, array) => {
+    const podemIr = pessoas.filter((tamanho, index, array) => {
         return (tamanho.altura > 1.5 && tamanho.idade > 14 && tamanho.idade < 60)
     }) 
-    console.log(regraAltura)
+    console.log(podemIr)
 }
-regraMontanhaRussa()
+podemIrMontanhaRussa()
+
+
+function naoPodemIrMontanhaRussa () {
+
+const naoPodemIr = pessoas.filter((tamanho, index, array) => {
+    return !(tamanho.altura > 1.5 && tamanho.idade > 14 && tamanho.idade < 60)
+}) 
+console.log(naoPodemIr)
+}
+naoPodemIrMontanhaRussa()
+
 
 
 
 ///////////___________EXERCÍCIO 4____________///////////
+
+
 ///////////___________EXERCÍCIO 5____________///////////
 
 
