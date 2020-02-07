@@ -1,14 +1,30 @@
 //////////EXERCÍCIO DE INTERPRETAÇÃO DE CÓDIGO//////////
 ///////////___________EXERCÍCIO 1____________///////////
+/**
+ * vai depender do valor digitado no prompt. O valor que 
+ * deve aparecer em reais é o valorEmDolar * cotação.Ex- se
+ * o valor do prompt for 4, vai sair 400 no console
+ */
 ///////////___________EXERCÍCIO 2____________///////////
+/**
+ * 165
+ *tipo de investimento informado incorreto
+ */
 ///////////___________EXERCÍCIO 3____________///////////
+/**
+ * 14
+ * 6
+ * 8
+ */
 ///////////___________EXERCÍCIO 4____________///////////
-
-
+/**
+ * log numero1 = acho que mostra todos os numeros, ja que infinito 
+ * deve ir tanto pra >0 quanto <0
+ * log numero2 = todos os numeros exceto -10
+ */
 ///////////EXERCÍCIO DE LÓGICA DE PROGRAMAÇÃO///////////
 ///////////___________EXERCÍCIO 1____________///////////
 ///////////___________EXERCÍCIO 2____________///////////
-
 /* 
     A- false
     B- false
@@ -16,7 +32,6 @@
     D- true
     E- true
 */
-
 ///////////___________EXERCÍCIO 3____________///////////
 /**
  *  O Código não funcionava.
@@ -69,11 +84,8 @@ function LógicaDeProgramacaoEx05(a, b) {
     }
     //Math.abs retorna o valor absoluto de um número
     console.log(`A diferença entre eles é ${Math.abs(a - b)}`)
-
 }
 // LógicaDeProgramacaoEx05(10, 20)
-
-
 
 ///////////_______EXERCÍCIO DE FUNÇÕES_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
@@ -97,7 +109,6 @@ function exerciciosDeFuncoes1(arrayDeNumeros) {
 // exerciciosDeFuncoes1([3, 1, 4, 5, 10, 7, 8, 21, 6]) //coloque números seguindo o padrão [1, 4, 15, 3]
 
 
-
 ///////////___________EXERCÍCIO 2____________///////////
 
 let exerciciosDeFuncoes2 = () => {
@@ -109,7 +120,6 @@ let exerciciosDeFuncoes2 = () => {
 
 ///////////_______EXERCÍCIO DE OBJETOS_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
-
 /**
  * array de objetos é um tipo de array que recebe 
  *  podem ser utilizados quando temos varios valores que 
@@ -118,17 +128,11 @@ let exerciciosDeFuncoes2 = () => {
  * dados estejam em um sólugar a fim de facilitar o 
  * acesso de forma organizada.
  */
-
-
-
-
 ///////////___________EXERCÍCIO 2____________///////////
 
-
 function criaRetangulo(lado1, lado2) {
-    console.log(`largura ${lado1}, altura ${lado2}, perímetro ${2*(lado1 + lado2)} e área ${lado1* lado2}`)
+    console.log(`largura ${lado1}, altura ${lado2}, perímetro ${2 * (lado1 + lado2)} e área ${lado1 * lado2}`)
 }
-
 // criaRetangulo(100, 20)
 
 
@@ -146,24 +150,80 @@ function exerciciosDeObjetos3() {
     console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de
 ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor}
 e estrelado por ${filmeFavorito.atores}!`)
-
-
 }
 // exerciciosDeObjetos3()
 
+
 ///////////___________EXERCÍCIO 4____________///////////
 
+const cadastroDePessoas = [{
+    nome: "vitor",
+    idade: 34,
+    email: "vitor@email.com",
+    endereco: "Avenida das Acácias,22"
+}]
 
+function exerciciosDeObjetos4() {
 
+    const pessoaCadastrada = cadastroDePessoas.map((user, index, array) => {
+        user.nome = "anonimo";
+        return user;
+    })
+    console.log(pessoaCadastrada)
+    console.log(cadastroDePessoas)
+}
 
-
-
-
+// exerciciosDeObjetos4()
 
 
 ///////////__EXERCÍCIO DE FUNÇÕES DE ARRAY___///////////
 ///////////___________EXERCÍCIO 1____________///////////
+
+// A-
+const lista = [
+    { nome: "Pedro", idade: 20 },
+    { nome: "João", idade: 10 },
+    { nome: "Paula", idade: 12 },
+    { nome: "Artur", idade: 89 }
+]
+function arrayAdultos() {
+
+    const arrayMaiorQue20 = lista.filter((pessoa, index, array) => {
+        return pessoa.idade >= 20
+    })
+    console.log(arrayMaiorQue20)
+}
+// arrayAdultos()
+
+//B-
+function arrayCriancas () {
+    const arrayMenorQue20 = lista.filter((pessoa, index, array) => {
+        return pessoa.idade < 20
+    })
+    console.log(arrayMenorQue20)
+}
+// arrayCriancas()
+
+
 ///////////___________EXERCÍCIO 2____________///////////
+
+//A- 
+function exerciciosDeObjetos4() {
+    array = [1, 2, 3, 4, 5, 6]    
+    
+    const arrayVezes2 = lista.filter((numero, index, array) => {
+        return (array * 2)
+
+})
+console.log(arrayVezes2)
+}
+exerciciosDeObjetos4()
+
+
+
+
+
+
 ///////////___________EXERCÍCIO 3____________///////////
 ///////////___________EXERCÍCIO 4____________///////////
 ///////////___________EXERCÍCIO 5____________///////////
