@@ -44,9 +44,35 @@ function LógicaDeProgramacaoEx04(a, b, c) {
         console.log("Triângulo escaleno.")
     }
 }
-LógicaDeProgramacaoEx04()
+// LógicaDeProgramacaoEx04()
 
 ///////////___________EXERCÍCIO 5____________///////////
+
+function LógicaDeProgramacaoEx05(a, b) {
+    a
+    b
+    console.log(`${a} e ${b}.`)
+    if (a > b) {
+        console.log(`O maior é: ${a}`)
+    } else {
+        console.log(`O maior é: ${b}`)
+    }
+    if (a % b !== 0) {
+        console.log(`${a} não é divisivel por ${b}`)    
+    } else {
+        console.log(`${a} é divisivel por ${b}`)    
+    }
+    if (b % a !== 0) {
+        console.log(`${b} não é divisivel por ${a}`)    
+    } else {
+        console.log(`${b} é divisivel por ${a}`)    
+    }
+    //Math.abs retorna o valor absoluto de um número
+    console.log(`A diferença entre eles é ${Math.abs(a - b)}` )
+
+}
+// LógicaDeProgramacaoEx05(10, 20)
+
 
 
 ///////////_______EXERCÍCIO DE FUNÇÕES_______///////////
