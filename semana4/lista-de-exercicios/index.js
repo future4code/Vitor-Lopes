@@ -196,7 +196,7 @@ function arrayAdultos() {
 // arrayAdultos()
 
 //B-
-function arrayCriancas () {
+function arrayCriancas() {
     const arrayMenorQue20 = lista.filter((pessoa, index, array) => {
         return pessoa.idade < 20
     })
@@ -209,13 +209,13 @@ function arrayCriancas () {
 
 //A- 
 function exerciciosDeObjetos4() {
-    array = [1, 2, 3, 4, 5, 6]    
-    
+    array = [1, 2, 3, 4, 5, 6]
+
     const arrayVezes2 = lista.filter((numero, index, array) => {
         return (array * 2)
 
-})
-console.log(arrayVezes2)
+    })
+    console.log(arrayVezes2)
 }
 exerciciosDeObjetos4()
 
@@ -224,36 +224,58 @@ exerciciosDeObjetos4()
 ///////////___________EXERCÍCIO 3____________///////////
 
 const pessoas = [
-	{ nome: "Paula", idade: 12, altura: 1.8},
-	{ nome: "João", idade: 20, altura: 1.3},
-	{ nome: "Pedro", idade: 15, altura: 1.9},
-	{ nome: "Luciano", idade: 22, altura: 1.8},
-	{ nome: "Artur", idade: 10, altura: 1.2},
-	{ nome: "Soter", idade: 70, altura: 1.9}
+    { nome: "Paula", idade: 12, altura: 1.8 },
+    { nome: "João", idade: 20, altura: 1.3 },
+    { nome: "Pedro", idade: 15, altura: 1.9 },
+    { nome: "Luciano", idade: 22, altura: 1.8 },
+    { nome: "Artur", idade: 10, altura: 1.2 },
+    { nome: "Soter", idade: 70, altura: 1.9 }
 ]
-function podemIrMontanhaRussa () {
-    
+function podemIrMontanhaRussa() {
+
     const podemIr = pessoas.filter((tamanho, index, array) => {
         return (tamanho.altura > 1.5 && tamanho.idade > 14 && tamanho.idade < 60)
-    }) 
+    })
     console.log(podemIr)
 }
-podemIrMontanhaRussa()
+// podemIrMontanhaRussa()
 
 
-function naoPodemIrMontanhaRussa () {
+function naoPodemIrMontanhaRussa() {
 
-const naoPodemIr = pessoas.filter((tamanho, index, array) => {
-    return !(tamanho.altura > 1.5 && tamanho.idade > 14 && tamanho.idade < 60)
-}) 
-console.log(naoPodemIr)
+    const naoPodemIr = pessoas.filter((tamanho, index, array) => {
+        return !(tamanho.altura > 1.5 && tamanho.idade > 14 && tamanho.idade < 60)
+    })
+    console.log(naoPodemIr)
 }
-naoPodemIrMontanhaRussa()
-
-
+// naoPodemIrMontanhaRussa()
 
 
 ///////////___________EXERCÍCIO 4____________///////////
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+
+    function consultasCanceladas() {
+
+        const consultasCanceladas = consultas.filter((consulta, index, array) => {
+            return consulta.cancelada === true
+        })
+        console.log(consultasCanceladas)
+
+        console.log(`Olá, ${consultasCanceladas[0].nome}. Estamos enviando esta mensagem para
+         da sua consulta no dia ${consultasCanceladas[0].dataDaConsulta}. Por favor, acuse
+        o recebimento deste e-mail.`)
+    
+    }
+    consultasCanceladas()
+    
+
 
 
 ///////////___________EXERCÍCIO 5____________///////////
