@@ -58,17 +58,17 @@ function LógicaDeProgramacaoEx05(a, b) {
         console.log(`O maior é: ${b}`)
     }
     if (a % b !== 0) {
-        console.log(`${a} não é divisivel por ${b}`)    
+        console.log(`${a} não é divisivel por ${b}`)
     } else {
-        console.log(`${a} é divisivel por ${b}`)    
+        console.log(`${a} é divisivel por ${b}`)
     }
     if (b % a !== 0) {
-        console.log(`${b} não é divisivel por ${a}`)    
+        console.log(`${b} não é divisivel por ${a}`)
     } else {
-        console.log(`${b} é divisivel por ${a}`)    
+        console.log(`${b} é divisivel por ${a}`)
     }
     //Math.abs retorna o valor absoluto de um número
-    console.log(`A diferença entre eles é ${Math.abs(a - b)}` )
+    console.log(`A diferença entre eles é ${Math.abs(a - b)}`)
 
 }
 // LógicaDeProgramacaoEx05(10, 20)
@@ -77,7 +77,32 @@ function LógicaDeProgramacaoEx05(a, b) {
 
 ///////////_______EXERCÍCIO DE FUNÇÕES_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
+
+function exerciciosDeFuncoes(arrayDeNumeros) {
+    let arraySemMaiorEMenor = arrayDeNumeros.sort(sortArray)
+
+    console.log(arraySemMaiorEMenor) //array já em ordem crescente
+
+    arraySemMaiorEMenor.pop()
+    arraySemMaiorEMenor.shift()
+
+    console.log(arraySemMaiorEMenor) //array sem maior e menor valores iniciais
+    console.log(arraySemMaiorEMenor[0]) //menor número
+    console.log(arraySemMaiorEMenor[arraySemMaiorEMenor.length - 1]) //Maior número
+
+    function sortArray(a, b) { //função para colocar array em ordem crescente
+        return (a - b)
+    }
+}
+// exerciciosDeFuncoes([3, 1, 4, 5, 10, 7, 8, 21, 6]) //coloque números seguindo o padrão [1, 4, 15, 3]
+
+
+
 ///////////___________EXERCÍCIO 2____________///////////
+
+
+
+
 
 ///////////_______EXERCÍCIO DE OBJETOS_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
