@@ -78,7 +78,7 @@ function LógicaDeProgramacaoEx05(a, b) {
 ///////////_______EXERCÍCIO DE FUNÇÕES_______///////////
 ///////////___________EXERCÍCIO 1____________///////////
 
-function exerciciosDeFuncoes(arrayDeNumeros) {
+function exerciciosDeFuncoes1(arrayDeNumeros) {
     let arraySemMaiorEMenor = arrayDeNumeros.sort(sortArray)
 
     console.log(arraySemMaiorEMenor) //array já em ordem crescente
@@ -94,13 +94,17 @@ function exerciciosDeFuncoes(arrayDeNumeros) {
         return (a - b)
     }
 }
-// exerciciosDeFuncoes([3, 1, 4, 5, 10, 7, 8, 21, 6]) //coloque números seguindo o padrão [1, 4, 15, 3]
+// exerciciosDeFuncoes1([3, 1, 4, 5, 10, 7, 8, 21, 6]) //coloque números seguindo o padrão [1, 4, 15, 3]
 
 
 
 ///////////___________EXERCÍCIO 2____________///////////
 
-
+let exerciciosDeFuncoes2 = () => {
+    alert("Hello Future4!")
+ }
+ 
+//  let invoke = exerciciosDeFuncoes2()
 
 
 
