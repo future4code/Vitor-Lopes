@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +22,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>React App</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +38,63 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+
+  <header>
+    <h1 id="logo">FutureTube</h1>
+    <input type="search" placeholder="Busca" id="busca">
+  </header>
+
+  <main class="master-container">
+    <nav id="menu-esq">
+      <a href="index.html"><button>Início</button></a>
+      <a href=""><button>Em Alta</button></a>
+      <a href=""><button>Inscrições</button></a>
+      <a href=""><button>Originais</button></a>
+      <a href="" id="quebraDeLinhaSuperiorBiblioteca"><button>Biblioteca</button></a>
+      <a href=""><button>Histórico</button></a>
+    </nav>
+    <div id="main-container">
+      <a href="player.html" class="linkVideos">
+        <video src="http://soter.ninja/videos/1.mp4"></video>
+        <div>teste1</div>
+      </a>
+      <a href="player2.html" class="linkVideos">
+        <video src="http://soter.ninja/videos/2.mp4"></video>
+        <div>teste2</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/3.mp4">testando</video>
+        <div>teste3</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/4.mp4">testando</video>
+        <div>teste4</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/5.mp4">testando</video>
+        <div>teste5</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/6.mp4">testando</video>
+        <div>teste6</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/7.mp4">testando</video>
+        <div>teste7</div>
+      </a>
+      <a href="">
+        <video src="http://soter.ninja/videos/8.mp4">testando</video>
+        <div>teste8</div>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>Oi, eu moro no footer!</footer>
+
+
+
+
+</body>
+
 </html>
