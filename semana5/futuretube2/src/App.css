@@ -23,7 +23,7 @@ header  {
   background: orange;
   position: fixed;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 #busca  {
   height: 20px;
@@ -36,7 +36,7 @@ header  {
   text-align: center;
   display: inline-block;
 }
-header button{
+/*header button{ //ainda sem utilização
   border: none;
   margin: 0px;
   height: 12vh;
@@ -45,9 +45,9 @@ header button{
   font: bold 2vh Roboto;
   color: white;
   display: inline-block;
-  float: right;   /*moveu os botões para a direita*/
+  float: right;
   white-space: nowrap;
-}
+}*/
 
 /* INDEX */
 div {
@@ -69,9 +69,6 @@ div {
   height: 80vh;
   position: static;
   grid-template-rows: repeat(6, 40px)
-}
-#quebraDeLinhaSuperiorBiblioteca {
-  border-top: 4px solid rgb(212, 212, 212);
 }
 #menu-esq button    {
   background-color: white;
@@ -100,8 +97,11 @@ div {
   display: flex;
   padding-left: 1vw;
 }
-#main-container > a {
+#main-container a {
   border: 1px solid green;
+}
+.topBorder {
+  border-top: 4px solid rgb(212, 212, 212);
 }
 
 /*IMAGEM FIT */
@@ -136,6 +136,7 @@ video{
   display: flex;
   justify-items: center;
 }
+
 #descricao  {
   padding-top: 14vh;
   height: 10vh;
@@ -156,6 +157,8 @@ video{
 #menu-dir div   {
   border: none;
 }
+
+
 
 @media (max-width: 700px) {
   #main-container {
