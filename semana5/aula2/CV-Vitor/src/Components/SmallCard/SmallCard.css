@@ -1,0 +1,19 @@
+.small-card {
+    width: 40vw;
+    height: 7vh;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.small-card > *{
+    padding-right: 10px;
+}
+.small-card img {
+    width: 30px;
+    height: 30px;
+}
+.small-card span {
+    font-weight: bold;
+}

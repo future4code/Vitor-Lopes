@@ -1,24 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import  BigCard from './Components/BigCard/BigCard'
+import  SmallCard from './Components/SmallCard/SmallCard'
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <BigCard titulo='Vitor Soares Lopes' texto='Oi eu sou o Vitor' imagem='https://codinginfinite.com/wp-content/uploads/2019/05/maxresdefault-1.jpg' /> */}
+    <SmallCard titulo='Email:' texto='emailaqui@email.com' imagem='https://codinginfinite.com/wp-content/uploads/2019/05/maxresdefault-1.jpg' />
+
     </div>
   );
 }
