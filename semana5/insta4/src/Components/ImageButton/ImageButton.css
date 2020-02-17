@@ -1,0 +1,19 @@
+.image-button {
+    width: 20vw;
+    height: 4vh;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.image-button img {
+    width: 30px;
+    height: 30px;
+    padding-left: 10px;
+    position: relative;
+}
+.image-button p {
+    padding: 0 50px 0 20px;
+}
