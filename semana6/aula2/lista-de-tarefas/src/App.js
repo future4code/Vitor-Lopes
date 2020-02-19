@@ -5,9 +5,20 @@ import styled from 'styled-components';
 
 
 const Principal = styled.div`
+width:500px;
+border: 1px grey solid;
 `
 const RecebeLi = styled.ul`
+border-top: 1px grey solid;
+
 `
+const LiConteiner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  
+`
+
 const Linguagens = styled.li`
   text-decoration: ${({ concluida }) => (concluida ? "line-through" : "none")};
 `
@@ -101,17 +112,23 @@ class App extends React.Component {
                   return !listaDeLinguagem.concluida
                 case "concluidas":
                   return listaDeLinguagem.concluida
-                default: 
-                return true
+                default:
+                  return true
               }
             })
 
             .map(listaDeLinguagem => {
               return (
-                <Linguagens onClick={() => this.seletorLinguagem(listaDeLinguagem.id)}
-                  concluida={listaDeLinguagem.concluida}>
-                  {listaDeLinguagem.texto}
-                </Linguagens>
+                <LiConteiner>
+                  <Linguagens onClick={() => this.seletorLinguagem(listaDeLinguagem.id)}
+                    concluida={listaDeLinguagem.concluida}>
+                    {listaDeLinguagem.texto}
+                  </Linguagens>
+
+                  <input type='checkbox' />
+
+                </LiConteiner>
+
               );
             })}
         </RecebeLi>
