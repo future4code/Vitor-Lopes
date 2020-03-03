@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Future4 | Full-Stack Web Development Bootcamp
+Desenvolvimento de aplicações completas, incluindo frontend Web com React e backend com Node.js.
 
-## Available Scripts
+<p align="center">
+  <img  width='500' src='https://user-images.githubusercontent.com/45580434/74607837-f69f5e00-50ba-11ea-97e0-62fab855bcb6.png'>
+</p>
 
-In the project directory, you can run:
+## Projeto: FutureForms 
 
-### `npm start`
+[Site do projeto](http://beneficial-limit.surge.sh/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![FutureForms-17-02-2020](https://user-images.githubusercontent.com/56808066/74682990-56befe80-51a6-11ea-8e45-57ea027f28a2.gif)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/future4code/sagan-futureECommerce2">
 
-### `npm test`
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/future4code/sagan-futureECommerce2">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/future4code/sagan-futureECommerce2">
 
-### `npm run build`
+  <a href="https://github.com/future4code/sagan-futureECommerce2/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/future4code/sagan-futureECommerce2">
+  </a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <a href="https://github.com/future4code/sagan-futureECommerce2/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/future4code/sagan-futureECommerce2">
+  </a>
+</p>
+<br>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Desenvolvido por:** 
+* [Vitor Lopes](https://github.com/vitor-slopes)
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Escopo do Projeto
 
-### `npm run eject`
+<br>
+Criar um formulário com várias etapas cuja ordem depende das respostas dadas pelo usuário.
+<br><br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Requisitos obrigatórios
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**ETAPA 1:** Dados gerais
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Nome [pergunta aberta]
+    - [x]  Concluído
+2. Idade [pergunta aberta]
+    - [x]  Concluído
+3. Email [pergunta aberta]
+    - [x]  Concluído
+4. Qual o grau de escolaridade [pergunta com seleção]
+    - [x]  Ensino Médio Incompleto
+    - [x]  Ensino Médio Completo
+    - [x]  Ensino Superior Incompleto
+    - [x]  Ensino Superior Completo
 
-## Learn More
+**ETAPA 2:** Informações educacionais para quem está cursando (ou já terminou) o ensino superior
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Qual o curso? [pergunta aberta]
+    - [x]  Concluído
+2. Qual a unidade de ensino? [pergunta aberta]
+    - [x]  Concluído
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**ETAPA 3:** Informações sobre quem não se formou no ensino superior nem está cursando
 
-### Code Splitting
+1. Por que você não terminou um curso de graduação? [pergunta aberta]
+    - [x]  Concluído
+2. Você fez algum curso complementar? [pergunta com seleção]
+    - [x]  Curso técnico
+    - [x]  Cursos de inglês
+    - [x]  Não fiz curso complementar
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**ETAPA FINAL:** O formulário acabou
 
-### Analyzing the Bundle Size
+1. Deve conter alguma frase agradecendo ao usuário por ter respondido o formulário.
+    - [x]  Concluído
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<br><br>
