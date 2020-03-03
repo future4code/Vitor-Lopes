@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "2bb9fad0-dd43-4bfa-81b3-ff63cd42f51b",
+		"name": "NovaColeção-Vitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Playlists Copy",
+			"item": [
+				{
+					"name": "createPlaylist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth",
+								"value": "vitorlopes",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n\t\"name\": \"Classic\"\n}\n"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/createPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"createPlaylist"
+							]
+						},
+						"description": "### Descrição:\nEssa requisição cria uma nova playlist. \n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\"\n```\n**Body**\n<br/>`name`: nome da playlist (obrigatório)\n```\n{\n\t\"name\": \"string\" \n}\n```\n\n### Output de Sucesso:\n**Body**\n<br/>`message`: mensagem de sucesso\n\n```\n{\n\t\"message\": \"string\"\n}\n```\n"
+					},
+					"response": [
+						{
+							"name": "createPlaylist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "auth",
+										"value": "authentication-token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"playlist-name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "addMusicToPlaylist",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "vitorlopes"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"playlistId\": \"e410d3b5-3de1-4b55-a211-ec4ffe11563b\",\n\t\"music\":  {\n\t\t\"name\": \"Piano Sonata No. 11 in a Major, K. 331: Rondo: Alla Turca\",\n\t\t\"artist\": \"Wolfgang Amadeus Mozart\",\n\t\t\"url\": \"https://www.youtube.com/watch?v=oszouIHmDqc&list=PLxVexRqKs_pTnLqmWzqGVDwt2eJtkuJrl\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/addMusicToPlaylist",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"addMusicToPlaylist"
+							]
+						},
+						"description": "### Descrição:\nEssa requisição adiciona uma música a uma playlist existente\n\n### Input:\n**Headers**\n<br/> `auth`: token de autenticação\n```\n\tauth: \"string\"\n```\n**Body**\n<br/>`playlistId`: id da playlist (obrigatório)\n<br/>`music`: objeto que possui as informações da (obrigatório) \n<br/>`name`: nome da música (obrigatório)\n<br/>`artist`: cantor ou banda da música (obrigatório)\n<br/>`url`: URL da música para ser tocada (obrigatório)\n```\n{\n\t\"playlistId\": \"string\", \n\t\"music\": { \n\t\t\"name\": \"string\", \n\t\t\"artist\": \"string\",\n\t\t\"url\": \"string\"\n\t}\n}\n```\n\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlaylists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "vitorlopes",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getAllPlaylists",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"getAllPlaylists"
+							]
+						},
+						"description": "### Descrição:\nEsta requisição serve para ver o `id` e o `name` de todas as suas playlists.\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\"\n```\n\n### Output:\n**Body**\n<br/>`quantity`: quantitdade de playlists\n<br/>`list`: lista com as playlists\n<br/> `id`: id de cada playlist\n<br/> `name`: nome de cada playlist\n\n```\n{\n    \"result\": {\n        \"quantity\": \"number\",\n        \"list\": [\n            {\n                \"id\": \"string\",\n                \"name\": \"string\"\n            }\n        ]\n    }\n}\n```\n"
+					},
+					"response": []
+				},
+				{
+					"name": "searchPlaylist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "vitorlopes"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/searchPlaylist?playlistName=Classic",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"searchPlaylist"
+							],
+							"query": [
+								{
+									"key": "playlistName",
+									"value": "Classic"
+								}
+							]
+						},
+						"description": "### Descrição:\nEssa requisição parmite pesquisar por uma playlist, usando o nome dela ou parte dele.\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\"\n```\n\n**Query String**\n<br/> `playlistName`: nome da playlist ou parte dele (obrigatório)\n```\n\tplaylistName:\"string\" \n```\n\n### Output:\n**Body**\n<br/> `quantity`: quantidade de playlists encontradas\n<br/> `list`: array com as playlists\n<br/> `id`: id de cada playlist\n<br/> `name`: nome de cada playlist\n```\n{\n    \"result\": {\n    \t\"quantity\": \"number\", \n        \"list\": [\n            {\n                \"id\": \"string\", \n                \"name\": \"string\" \n            }\n        ]\n    }\n}\n```\n\n\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "getPlaylistMusics/:playlistId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "vitorlopes",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/getPlaylistMusics/e410d3b5-3de1-4b55-a211-ec4ffe11563b",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"getPlaylistMusics",
+								"e410d3b5-3de1-4b55-a211-ec4ffe11563b"
+							]
+						},
+						"description": "### Descrição:\nEsta requisição permite verificar quais músicas estão em uma determinada playlist\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Path Param**\n<br/>`playlistId`: id da playlist (obrigatório)\n\n### Output:\n**Body**\n<br/> `quantity`: quantidade de músicas da playlist\n<br/> `musics`: array com as informações das músicas\n<br/> `id`: id de cada música\n<br/> `name`: nome de cada música\n<br/> `artist`: cantor ou band da música\n<br/>`url`: URL da música para ser tocada\n```\n{\n    \"result\": {\n        \"quantity\": \"number\",\n        \"musics\": [ \n            {\n                \"id\": \"string\", \n                \"name\": \"string\", \n                \"artist\": \"string\",\n                \"url\": \"string\"\n            }\n        ]\n    }\n}\n```\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "vitorlopes"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/deletePlaylist?playlistId=725d021f-74bb-4c6c-a582-9a101afa7c4f",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"deletePlaylist"
+							],
+							"query": [
+								{
+									"key": "playlistId",
+									"value": "725d021f-74bb-4c6c-a582-9a101afa7c4f"
+								}
+							]
+						},
+						"description": "### Descrição:\nEsta requisição serve para deletar alguma playlist.\n\n### Input:\n**Headers**\n<br/> `auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Query String**\n<br/> `playlistId`: id da playlist (obrigatório)\n```\n\tplaylistId:\"string\" \n```\n"
+					},
+					"response": []
+				},
+				{
+					"name": "removeMusicFromPlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "vitorlopes"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-spotif4.cloudfunctions.net/api/playlists/removeMusicFromPlaylist?playlistId=da0d36ea-ff32-44f8-883a-3bccec0e72ce&musicId=df87fafd-6ce7-4fd5-817a-c047fd63f3ab",
+							"protocol": "https",
+							"host": [
+								"us-central1-spotif4",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"api",
+								"playlists",
+								"removeMusicFromPlaylist"
+							],
+							"query": [
+								{
+									"key": "playlistId",
+									"value": "da0d36ea-ff32-44f8-883a-3bccec0e72ce"
+								},
+								{
+									"key": "musicId",
+									"value": "df87fafd-6ce7-4fd5-817a-c047fd63f3ab"
+								}
+							]
+						},
+						"description": "### Descrição:\nEsta requisição serve para deletar alguma música de alguma playlist\n\n### Input:\n**Headers**\n<br/> `auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Query String**\n<br/> `musicId`: id da música que se quer deletar (obrigatório)\n<br/> `playlistId`: id da playlist a que a música pertence (obrigatório)\n\n```\n\tplaylistId:\"string\"\n\tmusicId: \"string\"\n```\n"
+					},
+					"response": []
+				}
+			],
+			"description": "## Descrição\n</br>Esta API serve para fazer uma pequena playlist, podendo editar, criar, deletar e mais.\n```\n\tFeito pela Future4. Todos os direitos reservados\n```\n\n## Instruções gerais.\n\n**URL Base**\nUtilize este link como URL base da API.\n\n\n`https://us-central1-spotif4.cloudfunctions.net/api`\n\n**Autenticação**\n\nToda requisição deve ter um token de autenticação específico. Ele deve ser enviado nos headers, da seguinte forma: \n\n\n\n`auth: \"string\"`",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c8f0d16e-921b-46cf-aa54-b01aacf99949",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e0dbe26-918c-4d3a-a9c8-e9694847e91f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
