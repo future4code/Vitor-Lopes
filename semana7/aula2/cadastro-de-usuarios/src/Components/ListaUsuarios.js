@@ -11,13 +11,57 @@ const ConteinerComponent = styled.div`
     align-items: center;
     margin-top: 50px;
 `
+// const DataUsuarios = styled.div`
+
+// `
+const baseURL = "https://us-central1-future4-users.cloudfunctions.net/api"
+
+
+
+
 
 export default class ListaUsuarios extends Component {
-    render() {
-        return (
-            <ConteinerComponent>
-                <h1>Usuários Cadastrados:</h1>
-            </ConteinerComponent>
-        )
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      data: undefined,
+      errorMessage: undefined,
+      arrayUsuariosCadastrados: []
     }
+  }
+
+  componentDidMount() {
+    this.DataUsuarios()
+  }
+
+
+  DataUsuarios = () => {
+    const arrayUsuariosCadastrados = axios.get(`${baseURL}/users/getAllUsers`, {
+      headers: {
+        'api-token': 'string'
+      }
+    })
+
+    arrayUsuariosCadastrados.then((response) => {
+      console.log(response.data)
+      this.setState({request: response.data.result.list})
+      console.log(arrayUsuariosCadastrados)
+
+    }).catch((error) => {
+      console.log('error')
+    })
+
+  }
+
+
+  render() {
+    return (
+      <ConteinerComponent>
+        <h1>Usuários Cadastrados:</h1>
+        {/* <div>{console.log(this.arrayUsuariosCadastrados)}</div> */}
+        {/* <DataUsuarios /> */}
+      </ConteinerComponent>
+    )
+  }
 }
