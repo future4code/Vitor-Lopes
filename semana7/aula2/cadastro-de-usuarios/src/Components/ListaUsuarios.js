@@ -27,10 +27,9 @@ export default class ListaUsuarios extends Component {
     this.state = {
       data: undefined,
       errorMessage: undefined,
-      arrayUsuariosCadastrados: []
+      arrayUsuariosCadastrados: [],
     }
   }
-
   componentDidMount() {
     this.DataUsuarios()
   }
@@ -39,13 +38,13 @@ export default class ListaUsuarios extends Component {
   DataUsuarios = () => {
     const arrayUsuariosCadastrados = axios.get(`${baseURL}/users/getAllUsers`, {
       headers: {
-        'api-token': 'string'
+        'api-token': 'Lopes'
       }
     })
 
     arrayUsuariosCadastrados.then((response) => {
       console.log(response.data)
-      this.setState({request: response.data.result.list})
+      this.setState({ arrayUsuariosCadastrados: response.data.result.list })
       console.log(arrayUsuariosCadastrados)
 
     }).catch((error) => {
@@ -59,8 +58,17 @@ export default class ListaUsuarios extends Component {
     return (
       <ConteinerComponent>
         <h1>Usuários Cadastrados:</h1>
-        {/* <div>{console.log(this.arrayUsuariosCadastrados)}</div> */}
-        {/* <DataUsuarios /> */}
+        <ul>
+          {this.state.arrayUsuariosCadastrados.length === 0 && <p>Carregando...</p>}
+          {this.state.arrayUsuariosCadastrados.map((user) => (
+            <li key={user.id}>
+              {user.name}
+              <button>teste</button>
+            </li>
+          ))}
+
+        </ul>
+
       </ConteinerComponent>
     )
   }
