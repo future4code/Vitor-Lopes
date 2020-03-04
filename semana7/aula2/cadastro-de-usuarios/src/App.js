@@ -30,8 +30,6 @@ export default class App extends Component {
         </div>
         <div>
           {this.state.telaAtual === 'cadastro' ? (<CadastroUsuario />) : (<ListaUsuarios />)}
-          {/* <CadastroUsuario />
-          <ListaUsuarios /> */}
         </div>
       </div>
     )
