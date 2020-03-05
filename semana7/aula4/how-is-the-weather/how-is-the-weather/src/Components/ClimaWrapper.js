@@ -3,23 +3,26 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const ComponentWrapper = styled.div`
-    border: 2px solid grey;
-    border-radius: 10px;
-    height: 250px;
-    width: 800px;
-    display: grid;
-    grid-template-rows: repeat(2, 80%,20% ); 
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 250px;
+  width: 800px;
+  display: grid;
+  grid-template-rows: repeat(2, 80%,20% ); 
+  font-size: 15px;
+  background-color: #fcfcfb;
 `
+
 const SuperiorWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr );
+  display: grid;
+  grid-template-columns: repeat(5, 1fr );
 `
 const InferiorWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(5, 1fr );
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(5, 1fr );
+  justify-content: center;
+  align-items: center;
 `
 const DivCidade = styled.div`
   font-size: 20px;
@@ -32,13 +35,21 @@ const CardDayWeather = styled.div`
   padding: 0;
   margin: 0;
   align-content: center;
-  justify-content: space-around;
+  justify-content: flex-end;
 `
 
 const WeatherIcon = styled.img`
   max-width: 40%;
+  align-self: center;
+  justify-self: flex-start;
+  padding: 20px 0;
+`
+const Day = styled.h3`
+  align-self: center;
+  padding: 0;
+  margin: 0;
   position: relative;
-  align-self: flex-start;
+  top: -10px;
 `
 
 const baseURL = "https://www.metaweather.com/api/location/455827/"
@@ -80,49 +91,49 @@ export default class ClimaWrapper extends Component {
       <ComponentWrapper>
         <SuperiorWrapper>
           <CardDayWeather>
-            <span>{`${this.state.localWeather.consolidated_weather[0].applicable_date}`}</span>
+            <Day>{`${this.state.localWeather.consolidated_weather[0].applicable_date}`}</Day>
             <WeatherIcon src={`${imageBaseURL}${this.state.localWeather.consolidated_weather[0].weather_state_abbr}.svg`} />
-            <span>{`Max: ${this.state.localWeather.consolidated_weather[0].max_temp}ºC`}</span>
-            <span>{`Min: ${this.state.localWeather.consolidated_weather[0].min_temp}ºC`}</span>
+            <span>{`Max: ${parseInt(this.state.localWeather.consolidated_weather[0].max_temp)}ºC`}</span>
+            <span>{`Min: ${parseInt(this.state.localWeather.consolidated_weather[0].min_temp)}ºC`}</span>
             <span>{`${this.state.localWeather.consolidated_weather[0].weather_state_name}`}</span>
 
           </CardDayWeather>
           <CardDayWeather>
-            <span>{`${this.state.localWeather.consolidated_weather[1].applicable_date}`}</span>
+            <Day>{`${this.state.localWeather.consolidated_weather[1].applicable_date}`}</Day>
             <WeatherIcon src={`${imageBaseURL}${this.state.localWeather.consolidated_weather[1].weather_state_abbr}.svg`} />
-            <span>{`Max: ${this.state.localWeather.consolidated_weather[1].max_temp}ºC`}</span>
-            <span>{`Min: ${this.state.localWeather.consolidated_weather[1].min_temp}ºC`}</span>
+            <span>{`Max: ${parseInt(this.state.localWeather.consolidated_weather[1].max_temp)}ºC`}</span>
+            <span>{`Min: ${parseInt(this.state.localWeather.consolidated_weather[1].min_temp)}ºC`}</span>
             <span>{`${this.state.localWeather.consolidated_weather[1].weather_state_name}`}</span>
 
           </CardDayWeather>
           <CardDayWeather>
-            <span>{`${this.state.localWeather.consolidated_weather[2].applicable_date}`}</span>
+            <Day>{`${this.state.localWeather.consolidated_weather[2].applicable_date}`}</Day>
             <WeatherIcon src={`${imageBaseURL}${this.state.localWeather.consolidated_weather[2].weather_state_abbr}.svg`} />
-            <span>{`Max: ${this.state.localWeather.consolidated_weather[2].max_temp}ºC`}</span>
-            <span>{`Min: ${this.state.localWeather.consolidated_weather[2].min_temp}ºC`}</span>
+            <span>{`Max: ${parseInt(this.state.localWeather.consolidated_weather[2].max_temp)}ºC`}</span>
+            <span>{`Min: ${parseInt(this.state.localWeather.consolidated_weather[2].min_temp)}ºC`}</span>
             <span>{`${this.state.localWeather.consolidated_weather[2].weather_state_name}`}</span>
 
           </CardDayWeather>
           <CardDayWeather>
-            <span>{`${this.state.localWeather.consolidated_weather[3].applicable_date}`}</span>
+            <Day>{`${this.state.localWeather.consolidated_weather[3].applicable_date}`}</Day>
             <WeatherIcon src={`${imageBaseURL}${this.state.localWeather.consolidated_weather[3].weather_state_abbr}.svg`} />
-            <span>{`Max :${this.state.localWeather.consolidated_weather[3].max_temp}ºC`}</span>
-            <span>{`Min: ${this.state.localWeather.consolidated_weather[3].min_temp}ºC`}</span>
+            <span>{`Max :${parseInt(this.state.localWeather.consolidated_weather[3].max_temp)}ºC`}</span>
+            <span>{`Min: ${parseInt(this.state.localWeather.consolidated_weather[3].min_temp)}ºC`}</span>
             <span>{`${this.state.localWeather.consolidated_weather[3].weather_state_name}`}</span>
 
           </CardDayWeather>
           <CardDayWeather>
-            <span>{`${this.state.localWeather.consolidated_weather[4].applicable_date}`}</span>
+            <Day>{`${this.state.localWeather.consolidated_weather[4].applicable_date}`}</Day>
             <WeatherIcon src={`${imageBaseURL}${this.state.localWeather.consolidated_weather[4].weather_state_abbr}.svg`} />
-            <span>{`Max: ${this.state.localWeather.consolidated_weather[4].max_temp}ºC`}</span>
-            <span>{`Min: ${this.state.localWeather.consolidated_weather[4].min_temp}ºC`}</span>
+            <span>{`Max: ${parseInt(this.state.localWeather.consolidated_weather[4].max_temp)}ºC`}</span>
+            <span>{`Min: ${parseInt(this.state.localWeather.consolidated_weather[4].min_temp)}ºC`}</span>
             <span>{`${this.state.localWeather.consolidated_weather[4].weather_state_name}`}</span>
 
           </CardDayWeather>
         </SuperiorWrapper>
         {/* <div><hr></hr></div> */}
         <InferiorWrapper>
-          <DivCidade>{`Previsão do tempo para a cidade de ${this.state.localWeather.title}`}</DivCidade>
+          <DivCidade>{`${this.state.localWeather.title}`}</DivCidade>
         </InferiorWrapper>
 
       </ComponentWrapper>
