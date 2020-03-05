@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
+import axios from 'axios'
+import styled from 'styled-components'
+import ClimaWrapper from './Components/ClimaWrapper'
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+
+
+
+
+
+export default class App extends Component {
+  render() {
+      return (
+          <ClimaWrapper>
+              
+          </ClimaWrapper>
+      )
+  }
 }
 
-export default App;
