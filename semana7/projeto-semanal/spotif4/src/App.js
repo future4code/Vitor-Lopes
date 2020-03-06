@@ -77,7 +77,7 @@ export default class App extends Component {
 
             <ButtomDiv>Início</ButtomDiv>
             <ButtomDiv>Buscar</ButtomDiv>
-            <ButtomDiv onClick={this.trocaDePagina}>Criar Playlist</ButtomDiv>
+            <ButtomDiv onClick={this.trocaDePagina}>Playlist</ButtomDiv>
 
           </SidebarMenu>
           <div>

@@ -16,10 +16,11 @@ const GridConteiner = styled.div`
 const PlaylistBar = styled.div`
     height: 5vh;
     width: 90vw;
-    background-color: #a200fe;
+    background-color: #6c5aa1;
     display: flex;
-    
-
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
 `
 
 const baseURL = 'https://us-central1-spotif4.cloudfunctions.net/api'
@@ -37,6 +38,9 @@ export default class GridMusic extends Component {
 
   componentDidMount() {
     this.carregaListaDePlaylist()
+  }
+
+  componentDidUpdate() {
   }
 
   carregaListaDePlaylist = () => {
@@ -59,7 +63,9 @@ export default class GridMusic extends Component {
     const novoValor = event.target.value
     this.setState({ name: novoValor })
   }
+  componentDidUpdate() {
 
+  }
 
   lidaComSalvarPlaylist = () => {
     const novaPlaylist = {
@@ -74,7 +80,8 @@ export default class GridMusic extends Component {
 
     promessaDeNovoUsuario.then(response => {
       alert("Playlist criada com sucesso!")
-      
+      this.carregaListaDePlaylist()
+      this.setState({name: ''})
     }).catch(error => {
       alert("Algo deu errado. Tente novamente.")
       console.log(error.response.data.message)
@@ -93,23 +100,27 @@ export default class GridMusic extends Component {
     return (
       <div>
         <PlaylistBar>
-          <select>
-          {/* <option>{this.state.getListOfPlaylist.result.list[0].name}</option> */}
+          <div>
+            <input
+              placeholder='Digite o nome da playlist'
+              type='text'
+              onChange={this.lidaComMudancaNome}
+              value={this.state.name}
+            />
+            <button onClick={this.lidaComSalvarPlaylist}>Criar Playlist</button>
+          </div>
+          <div>
+            <select>
+              {this.state.getListOfPlaylist.result.list.map((playlist) => (
+                <option key={playlist.id}>
+                  {playlist.name}
+                </option>
+              ))}
+            </select>
+            <button>Selecionar Playlist</button>
 
-            {this.state.getListOfPlaylist.result.list.map((playlist) => (
-            <option key={playlist.id}>
-              {playlist.name}
-            </option>
-          ))}
+          </div>
 
-          </select>
-          <input
-            placeholder='Digite o nome da playlist'
-            type='text'
-            onChange={this.lidaComMudancaNome}
-            value={this.state.name}
-          />
-          <button onClick={this.lidaComSalvarPlaylist}>Criar Playlist</button>
         </PlaylistBar>
         <GridConteiner>
           <div>1</div>

@@ -18,7 +18,7 @@ export default class FooterMediaPlayer extends Component {
   render() {
     return (
       <CreatePlaylist>
-        CreatePlaylist
+        ShowPlaylists
       </CreatePlaylist>
     )
   }
