@@ -2,24 +2,26 @@ import React from 'react'
 import { Card, Checkbox, TextField, List, ListItem, ListItemText } from '@material-ui/core'
 import styled from 'styled-components'
 import BarraDeTarefas from './BarraDeTarefas'
+import Provider from '../redux/react-redux-f4'
 
+// const store = createStore()
 
-const Conteiner = styled.div`
-  display: block;
-  width: 600px;
-  margin: auto;
-`
+// const Provider = styled.div`
+//   display: block;
+//   width: 600px;
+//   margin: auto;
+// `
 const H1 = styled.h1`
   text-align: center;
   color: brown;
   padding: 50px 0;
   `
 
-
 export class AppContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      newTask: '',
       tasks: [
         {
           task: "Use Redux",
@@ -46,20 +48,32 @@ export class AppContainer extends React.Component {
     });
   };
 
-  // incrementTask = (event) => { //arrumar
-  //   this.setState({tasks: event.target.value })
-  // }
+  handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      const newTask = {
+        task: this.state.newTask,
+        statusDone: false,
+        id: new Date().getTime()
+      }
+      const novoArrayDeTasks = [...this.state.tasks]
+      novoArrayDeTasks.push(newTask)
+      this.setState({tasks: novoArrayDeTasks})
+      this.setState({newTask: ''})
+    }
+  }
 
   render() {
-    return <Conteiner>
+    return <Provider>
       <H1>4Tasks</H1>
       <Card  >
         <TextField
           id="standard-full-width"
           placeholder="O que tem que ser feito?"
           fullWidth
-          value={this.taskFieldValue}
-          onClick={this.incrementTask}
+          type='text'
+          value={this.state.newTask}
+          onChange={(e) => this.setState({ newTask: e.target.value })}
+          onKeyDown={this.handleKeyDown}
         />
         <List>
           {this.state.tasks.map((element, index) => (
@@ -81,6 +95,6 @@ export class AppContainer extends React.Component {
         </List>
         <BarraDeTarefas />
       </Card>
-    </Conteiner>
+    </Provider>
   }
 }

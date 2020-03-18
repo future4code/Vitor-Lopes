@@ -8,7 +8,7 @@ import React, {
 
 export const MyContext = createContext({ store: {} });
 
-export function Provider({ store, children }) {
+export default function Provider({ store, children }) {
   return <MyContext.Provider value={store}>{children}</MyContext.Provider>;
 }
 
