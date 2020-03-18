@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Checkbox, TextField, List, ListItem, ListItemText } from '@material-ui/core'
+import { Card, Checkbox, TextField, List, ListItem, ListItemText, Fab } from '@material-ui/core'
 import styled from 'styled-components'
 import BarraDeTarefas from './BarraDeTarefas'
 import Provider from '../redux/react-redux-f4'
@@ -21,6 +21,7 @@ export class AppContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedFilter: 'todas',
       newTask: '',
       tasks: [
         {
@@ -57,12 +58,51 @@ export class AppContainer extends React.Component {
       }
       const novoArrayDeTasks = [...this.state.tasks]
       novoArrayDeTasks.push(newTask)
-      this.setState({tasks: novoArrayDeTasks})
-      this.setState({newTask: ''})
+      this.setState({ tasks: novoArrayDeTasks })
+      this.setState({ newTask: '' })
     }
   }
 
+  deleteTask = taskDelete => {
+    const filter = this.state.tasks.filter(task => {
+      if (task.id === taskDelete) {
+        return false
+
+      }
+      return true
+    })
+    console.log(filter)
+    this.setState({ tasks: filter })
+  }
+
+  handleFilterChange = (event, value) => {
+    console.log(value)
+    this.setState({ selectedFilter: value })
+  }
+
   render() {
+    console.log(this.state.tasks)
+    let filteredTasks = this.state.tasks
+
+    if (this.state.selectedFilter === 'pendentes') {
+      filteredTasks = this.state.tasks.filter(task => {
+        if (task.statusDone === true) {
+          return false
+
+        }
+        return true
+      })
+    } else if (this.state.selectedFilter === 'completas') {
+      filteredTasks = this.state.tasks.filter(task => {
+        if (task.statusDone === false) {
+          return false
+
+        }
+        return true
+      })
+
+    }
+
     return <Provider>
       <H1>4Tasks</H1>
       <Card  >
@@ -76,24 +116,25 @@ export class AppContainer extends React.Component {
           onKeyDown={this.handleKeyDown}
         />
         <List>
-          {this.state.tasks.map((element, index) => (
+          {filteredTasks.map((element, index) => (
             <ListItem
               key={index}
               role={undefined}
               dense
               button
-              onClick={() => this.handleToggle(element)}
             >
               <Checkbox
                 checked={element.statusDone}
                 tabIndex={-1}
                 disableRipple
+                onClick={() => this.handleToggle(element)}
               />
               <ListItemText primary={element.task} />
+              <button onClick={() => this.deleteTask(element.id)} >excluir</button>
             </ListItem>
           ))}
         </List>
-        <BarraDeTarefas />
+        <BarraDeTarefas onchangeFilter={this.handleFilterChange} selectedFilter={this.state.selectedFilter} />
       </Card>
     </Provider>
   }
