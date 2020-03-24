@@ -3,6 +3,12 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
 
+function mapDispatchToProps(dispatch) {
+  return {
+    goToLoginPage: () => dispatch(push("/login")),
+    goToTripsCreate: () => dispatch(push("/trips/create")),
+  };
+}
 
 class HomePage extends Component {
   constructor(props) {
@@ -16,9 +22,15 @@ class HomePage extends Component {
     return (
       <div>
         HomePage
+        <button onClick={this.props.goToLoginPage}>ir para LoginPage</button>
+        <button onClick={this.props.goToTripsCreate}>ir para TripsCreate</button>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default connect(
+  null,
+  mapDispatchToProps
+)(HomePage);
+
