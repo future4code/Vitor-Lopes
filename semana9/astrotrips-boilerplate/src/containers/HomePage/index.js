@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
+import Header from '../../Components/Header'
+
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -14,15 +16,15 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     };
   }
 
   render() {
     return (
       <div>
+        <Header />
         HomePage
-        <button onClick={this.props.goToLoginPage}>ir para LoginPage</button>
         <button onClick={this.props.goToTripsCreate}>ir para TripsCreate</button>
       </div>
     );

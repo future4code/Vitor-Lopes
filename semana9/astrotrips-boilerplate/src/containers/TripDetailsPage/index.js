@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
+import Header from '../../Components/Header'
 
 
 class TripDetailsPage extends Component {
@@ -15,6 +16,7 @@ class TripDetailsPage extends Component {
   render() {
     return (
       <div>
+        <Header />
         TripDetailsPage
       </div>
     );
