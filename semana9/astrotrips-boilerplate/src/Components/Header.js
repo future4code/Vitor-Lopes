@@ -79,7 +79,7 @@ class PrimarySearchAppBar extends React.Component {
               <IconButton
                 aria-owns={isMenuOpen ? 'material-appbar' : undefined}
                 aria-haspopup="true"
-                onClick={this.props.goToLogin}
+                onClick={this.props.goToTripsList}
                 color="inherit"
               >
                 <AccountCircle />
@@ -99,7 +99,7 @@ PrimarySearchAppBar.propTypes = {
 
 function mapDispatchToProps(dispatch) {
   return {
-    goToHomePage: () => dispatch(push("/")),
+    goToHomePage: () => dispatch(push(routes.root)),
     goToTripsList: () => dispatch(push(routes.tripsCreate)),
   };
 }
