@@ -3,8 +3,11 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
 import Header from '../../Components/Header'
+import {routes} from '../../containers/Router/index'
 import { TextField, Select } from '@material-ui/core'
 import PlanetSelector from '../../Components/PlanetSelector'
+import AdminBar from '../../Components/AdminBar'
+
 
 const FormConteiner = styled.div`
   width: 100%;
@@ -14,7 +17,6 @@ const FormConteiner = styled.div`
   place-content: center;
   justify-items: center;
   grid-template-columns: 30% 30%;
-
 `
 
 class CreateTripPage extends Component {
@@ -25,12 +27,20 @@ class CreateTripPage extends Component {
     };
   }
 
+  componentDidMount() {
+    const token = window.localStorage.getItem('token')
+
+    if(token === null) {
+      this.props.goToLogin()
+    }
+  }
 
 
   render() {
     return (
       <div>
         <Header />
+        <AdminBar />
         CreateTripPage
         <FormConteiner>
           <TextField
@@ -61,4 +71,9 @@ class CreateTripPage extends Component {
   }
 }
 
-export default CreateTripPage;
+const mapDispatchToProps = (dispatch) => ({
+  goToLogin: () => dispatch(push(routes.login))
+})
+
+export default connect(null, mapDispatchToProps) (CreateTripPage);
+

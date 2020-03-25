@@ -9,7 +9,7 @@ import TripDetailsPage from '../TripDetailsPage/index'
 
 
 
-const routes = {
+export const routes = {
   root: "/",
   form: "/application-form",
   login: "/login",

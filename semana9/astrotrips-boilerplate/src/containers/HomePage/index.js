@@ -3,22 +3,17 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
 import Header from '../../Components/Header'
-
+import { routes } from '../../containers/Router/index'
 
 function mapDispatchToProps(dispatch) {
   return {
-    goToLoginPage: () => dispatch(push("/login")),
-    goToTripsCreate: () => dispatch(push("/trips/create")),
+    goToTripsCreate: () => dispatch(push(routes.tripsCreate)),
+    goToTripsList: () => dispatch(push(routes.tripsList)),
+    goToTripsDetail: () => dispatch(push(routes.tripsDetails)),
   };
 }
 
 class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
 
   render() {
     return (
@@ -26,13 +21,12 @@ class HomePage extends Component {
         <Header />
         HomePage
         <button onClick={this.props.goToTripsCreate}>ir para TripsCreate</button>
+        <button onClick={this.props.goToTripsList}>ir para goToTripsList</button>
+        <button onClick={this.props.goToTripsDetail}>ir para goToTripsDetail</button>
       </div>
     );
   }
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(HomePage);
+export default connect(null, mapDispatchToProps)(HomePage);
 

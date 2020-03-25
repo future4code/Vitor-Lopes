@@ -12,17 +12,12 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from 'styled-components'
+import {routes} from '../containers/Router/index'
+
 
 const Image = styled.img`
 height: 100px;
 `
-
-function mapDispatchToProps(dispatch) {
-  return {
-    goToHomePage: () => dispatch(push("/")),
-    goToLogin: () => dispatch(push("/login")),
-  };
-}
 
 class PrimarySearchAppBar extends React.Component {
   state = {
@@ -101,6 +96,14 @@ class PrimarySearchAppBar extends React.Component {
 PrimarySearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+function mapDispatchToProps(dispatch) {
+  return {
+    goToHomePage: () => dispatch(push("/")),
+    goToTripsList: () => dispatch(push(routes.tripsCreate)),
+  };
+}
+
 
 export default connect(null, mapDispatchToProps)(PrimarySearchAppBar);
 

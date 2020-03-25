@@ -3,25 +3,31 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
 import Header from '../../Components/Header'
+import {routes} from '../../containers/Router/index'
+import AdmBar from '../../Components/AdminBar'
 
+class ListTripsPage extends React.Component {
+  componentDidMount() {
+    const token = window.localStorage.getItem('token')
 
-
-class ListTripsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    };
+    if(token === null) {
+      this.props.goToLogin()
+    }
   }
 
   render() {
     return (
       <div>
         <Header />
+        <AdmBar />
         ListTripsPage
       </div>
     );
   }
 }
 
-export default ListTripsPage;
+const mapDispatchToProps = (dispatch) => ({
+  goToLogin: () => dispatch(push(routes.login))
+})
+
+export default connect(null, mapDispatchToProps) (ListTripsPage);
