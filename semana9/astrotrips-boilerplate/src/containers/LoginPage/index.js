@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { push } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import Header from '../../Components/Header'
-
+import { login } from '../../Actions/Auth'
 
 const LoginWrapper = styled.form`
   width: 100%;
@@ -31,18 +30,27 @@ class LoginPage extends Component {
     });
   };
 
+  handleLogin = (event) => {
+    event.preventDefault()
+    const { email, password } = this.state
+
+    this.props.login(email, password)
+  }
+
+
   render() {
     const { email, password } = this.state;
 
     return (
       <div>
         <Header />
-        <LoginWrapper>
+        <LoginWrapper onSubmit={this.handleLogin}>
           <TextField
             onChange={this.handleFieldChange}
             name="email"
             type="email"
             label="E-mail"
+            required
             value={email}
           />
           <TextField
@@ -50,13 +58,18 @@ class LoginPage extends Component {
             name="password"
             type="password"
             label="Password"
+            required
             value={password}
           />
-          <Button>Login</Button>
+          <Button type="submit">Login</Button>
         </LoginWrapper>
       </div>
     );
   }
 }
 
-export default LoginPage;
+const mapDispatchToProps = (dispatch) => ({
+  login: (email, password) => dispatch(login(email, password))
+})
+
+export default connect(null, mapDispatchToProps)(LoginPage);
