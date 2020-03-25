@@ -11,6 +11,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
+import styled from 'styled-components'
+
+const Image = styled.img`
+height: 100px;
+`
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -62,7 +67,7 @@ class PrimarySearchAppBar extends React.Component {
       <div>
         <AppBar position="static">
           <Toolbar>
-            <img onClick={this.props.goToHomePage} src='https://user-images.githubusercontent.com/56808066/76643183-56125180-6533-11ea-852e-e1ff3c6efd9a.png'></img>
+            <Image onClick={this.props.goToHomePage} src='https://user-images.githubusercontent.com/56808066/77550367-ce600780-6e8f-11ea-8aa1-a666bb51626d.png'></Image>
             <div>
               <div>
                 <SearchIcon />
@@ -71,7 +76,7 @@ class PrimarySearchAppBar extends React.Component {
                 type="text"
                 value={this.props.valorDaBusca}
                 onChange={this.props.acionaOnChange}
-                placeholder="Qual produto deseja?"
+                placeholder="Para onde quer viajar?"
               />
             </div>
             <div />
