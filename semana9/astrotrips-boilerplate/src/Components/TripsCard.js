@@ -11,7 +11,9 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    maxWidth: 250,
+    width: '45vw',
+    minHeight: '30vh',
+    marginTop: 50,
   },
   media: {
     height: 100,
@@ -21,7 +23,7 @@ const styles = {
 function TripsCards(props) {
   const { classes } = props;
   return (
-    <Card id={props.id} onClick={() => {props.mostraPrincipal(props.id)}} className={classes.card}>
+    <Card id={props.id} onClick={() => { props.mostraPrincipal(props.id) }} className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -33,16 +35,22 @@ function TripsCards(props) {
             {props.name}
           </Typography>
           <Typography component="p">
-          R$ {props.price} - {props.description}
+            {props.description}
+          </Typography>
+          <Typography component="p">
+            Planeta: {props.planet}
+          </Typography>
+          <Typography component="p">
+            Duração: {props.durationInDays}
+          </Typography>
+          <Typography component="p">
+            Data da viagem: {props.date}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button size="small" color="primary">
-          Ver produto
-        </Button>
-      <Button onClick={() => {props.adicionaAoCarrinho(props.id)}} size="small" color="primary">
-          Adicionar ao carrinho
+        <Button onClick={() => { props.adicionaAoCarrinho(props.id) }} size="small" color="primary">
+          Inscrever-se
         </Button>
       </CardActions>
     </Card>
