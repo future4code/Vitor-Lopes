@@ -6,11 +6,7 @@ import Header from '../../Components/Header'
 import { routes } from '../../containers/Router/index'
 import axios from 'axios'
 import TripGrid from '../../Components/TripGrid'
-
-const user = 'lopes'
-const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/${user}`
-
-
+import { getTrips } from '../../Actions/Trips'
 
 class HomePage extends Component {
   constructor(props) {
@@ -19,32 +15,13 @@ class HomePage extends Component {
 
     };
   }
+
   componentDidMount() {
-    this.catchTripsList()
+    this.props.fetchTrips()
   }
-
-
-  catchTripsList = () => {
-    const response = axios.get(`${baseUrl}/trips`)
-    response.then((response) => {
-      const tripsList = response.data.trips
-      console.log(tripsList)
-  
-  
-      // const arraytemp = response.data.products
-      // arraytemp.forEach((item, index, array) => {
-      //   item.carrinho = 0
-      //   item.image = (`https://i.picsum.photos/id/1/${this.gna()}${this.gna()}${this.gna()}/${this.gna()}${this.gna()}${this.gna()}.jpg`)
-      // })
-      // this.setState({ products: arraytemp })
-  
-    }).catch((error) => {
-      console.log(error.message)
-    })
-  }
-  
 
   render() {
+    console.log(this.props.allTrips)
     return (
       <div>
         <Header />
@@ -63,8 +40,14 @@ function mapDispatchToProps(dispatch) {
     goToTripsCreate: () => dispatch(push(routes.tripsCreate)),
     goToTripsList: () => dispatch(push(routes.tripsList)),
     goToTripsDetail: () => dispatch(push(routes.tripsDetails)),
+    fetchTrips: () => dispatch(getTrips())
   };
 }
+function mapStateToProps(state) {
+  return {
+    allTrips: state.trips.allTrips
+  }
+}
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
 
