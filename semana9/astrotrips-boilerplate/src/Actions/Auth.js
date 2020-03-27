@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { push } from "connected-react-router";
 
-
 const user = 'lopes'
 const baseUrl = `https://us-central1-missao-newton.cloudfunctions.net/futureX/${user}`
 

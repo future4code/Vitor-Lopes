@@ -23,7 +23,7 @@ const styles = {
 function TripsCards(props) {
   const { classes } = props;
   return (
-    <Card id={props.id} onClick={() => { props.mostraPrincipal(props.id) }} className={classes.card}>
+    <Card id={props.id} className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -49,7 +49,7 @@ function TripsCards(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button onClick={() => { props.adicionaAoCarrinho(props.id) }} size="small" color="primary">
+        <Button size="small" color="primary">
           Inscrever-se
         </Button>
       </CardActions>

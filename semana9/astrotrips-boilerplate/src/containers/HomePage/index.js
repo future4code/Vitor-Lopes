@@ -4,7 +4,6 @@ import { push } from "connected-react-router";
 import styled from "styled-components";
 import Header from '../../Components/Header'
 import { routes } from '../../containers/Router/index'
-import axios from 'axios'
 import { getTrips } from '../../Actions/Trips'
 import TripsCard from "../../Components/TripsCard";
 
@@ -13,15 +12,12 @@ const DisplayGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
 `
-
+const Title = styled.h1`
+display: flex;
+  justify-content: center;
+`
 
 class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
 
   componentDidMount() {
     this.props.fetchTrips()
@@ -32,10 +28,7 @@ class HomePage extends Component {
     return (
       <div>
         <Header />
-        HomePage
-        <button onClick={this.props.goToTripsCreate}>ir para TripsCreate</button>
-        <button onClick={this.props.goToTripsList}>ir para goToTripsList</button>
-        <button onClick={this.props.goToTripsDetail}>ir para goToTripsDetail</button>
+        <Title>Confira nossas viagens promocionais</Title>
         <DisplayGrid>
           {this.props.allTrips.map(element => {
             return (
