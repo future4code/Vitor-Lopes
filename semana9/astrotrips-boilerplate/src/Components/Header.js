@@ -12,25 +12,36 @@ import { routes } from '../containers/Router/index'
 const Logo = styled.img`
 height: 100px;
 `
+const ButtonWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+width: 100vw;
+`
+const LabelButton = styled.p`
+  font-size: 12px;
+  margin: -5px;
+  padding: 0;
+`
+const logoUrl = 'https://user-images.githubusercontent.com/56808066/77550367-ce600780-6e8f-11ea-8aa1-a666bb51626d.png'
 
 class PrimarySearchAppBar extends React.Component {
-
   render() {
-
     return (
       <div>
         <AppBar position="static">
           <Toolbar>
-            <Logo onClick={this.props.goToHomePage} src='https://user-images.githubusercontent.com/56808066/77550367-ce600780-6e8f-11ea-8aa1-a666bb51626d.png'></Logo>
-            <div />
-            <div>
+            <ButtonWrapper>
+              <Logo onClick={this.props.goToHomePage} src={logoUrl}></Logo>
               <IconButton
                 onClick={this.props.goToTripsList}
                 color="inherit"
               >
-                <AccountCircle />
+                <div>
+                  <AccountCircle />
+                  <LabelButton>login</LabelButton>
+                </div>
               </IconButton>
-            </div>
+            </ButtonWrapper>
           </Toolbar>
         </AppBar>
       </div>
