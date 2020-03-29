@@ -38,7 +38,7 @@ class PrimarySearchAppBar extends React.Component {
               >
                 <div>
                   <AccountCircle />
-                  <LabelButton>login</LabelButton>
+                  <LabelButton>admin</LabelButton>
                 </div>
               </IconButton>
             </ButtonWrapper>
