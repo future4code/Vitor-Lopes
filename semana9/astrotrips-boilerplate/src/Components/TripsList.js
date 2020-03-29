@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = {
   card: {
-    width: '45vw',
-    minHeight: '20vh',
+    width: '48vw',
+    minHeight: '10vh',
     marginTop: 10,
   },
   media: {
@@ -37,13 +36,11 @@ function TripsList(props) {
           <Typography component="p">
             Data da viagem: {props.date}
           </Typography>
+          <Button size="small" color="primary">
+            Detalhes
+          </Button>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Detalhes
-        </Button>
-      </CardActions>
     </Card>
   );
 }

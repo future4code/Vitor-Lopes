@@ -28,6 +28,10 @@ class ListTripsPage extends React.Component {
   componentWillMount() {
     this.props.fetchTrips()
   }
+  openTripClick(tripClickId) {
+    console.log(tripClickId)
+    // this.props.goToTripDetail()
+  }
 
   render() {
     return (
@@ -38,7 +42,7 @@ class ListTripsPage extends React.Component {
         <DisplayGrid>
           {this.props.allTrips.map(element => {
             return (
-              <div key={element.id} >
+              <div key={element.id} onClick={() => this.openTripClick(element.id)} >
                 <TripsList
                   name={element.name}
                   id={element.id}
@@ -58,7 +62,8 @@ class ListTripsPage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   goToLogin: () => dispatch(push(routes.login)),
-  fetchTrips: () => dispatch(getTrips())
+  fetchTrips: () => dispatch(getTrips()),
+  goToTripDetail: () => dispatch(push(routes.tripsDetails))
 })
 
 function mapStateToProps(state) {
