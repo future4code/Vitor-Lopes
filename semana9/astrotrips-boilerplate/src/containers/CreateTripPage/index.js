@@ -56,7 +56,6 @@ class CreateTripPage extends Component {
       <div>
         <Header />
         <AdminBar />
-        CreateTripPage
         <FormConteiner>
           <TextField
             name='name'

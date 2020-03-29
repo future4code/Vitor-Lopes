@@ -28,7 +28,7 @@ class TripDetailsPage extends Component {
       <div>
         <Header />
         <AdminBar />
-        TripDetailsPage
+        TripDetailsPage em construção
       </div>
     );
   }
