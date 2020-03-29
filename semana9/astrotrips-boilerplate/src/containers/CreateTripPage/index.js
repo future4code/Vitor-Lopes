@@ -19,13 +19,6 @@ const FormConteiner = styled.form`
   grid-template-columns: 30% 30%;
 `
 
-const tripForm = [
-  { name: 'name', label: 'Nome da Viagem', type: 'text', required: true, pattern: '[a-zA-Zãé ]{5,}' },
-  { name: 'date', label: 'Data da viagem', type: 'text', required: true, pattern: '[a-zA-Zãé ]{3,}' },
-  { name: 'description', label: 'Descrição', type: 'text', required: true, pattern: '[a-zA-Zãé ]{3,}' },
-  { name: 'durationInDays', label: 'Duração(em dias)', type: 'text', required: true, pattern: '[a-zA-Zãé ]{3,}' },
-]
-
 class CreateTripPage extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +26,8 @@ class CreateTripPage extends Component {
 
     };
 
-  }  componentDidMount() {
+  }  
+  componentDidMount() {
     const token = window.localStorage.getItem('token')
 
     if (token === null) {
