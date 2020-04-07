@@ -16,6 +16,11 @@ const H1 = styled.h1`
   color: brown;
   padding: 50px 0;
   `
+  export function anoBissexto(ano) {
+	if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0)) {
+	  return (true)
+	}
+  }
 
 export class AppContainer extends React.Component {
   constructor(props) {
