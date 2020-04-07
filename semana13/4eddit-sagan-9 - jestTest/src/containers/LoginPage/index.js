@@ -130,5 +130,5 @@ function mapDispatchToProps(dispatch) {
     sendDataToApi: (userInfo) => dispatch(setLogin(userInfo))
   };
 }
-
+export const LoginPagePure = LoginPage
 export default connect(null, mapDispatchToProps)(LoginPage);

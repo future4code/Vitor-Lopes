@@ -1,6 +1,6 @@
-import {PrimarySearchAppBar} from './Header'
+import PrimarySearchAppBar from './Header'
 
-describe('Header', () => {
+describe('Header components', () => {
     test('should have', () => {
         
     })
