@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const baseUrl = 'https://us-central1-missao-newton.cloudfunctions.net/generic/planer-sagan-vitor'
 
-export const showTasks = (tasks) => {
+export const getTasks = (tasks) => {
   return {
     type: 'GET_TASKS',
     payload: {
@@ -22,7 +22,7 @@ export const getTasksList = () => async (dispatch) => {
       }
     )
     // console.log(result.data)
-    dispatch(showTasks(result.data))
+    dispatch(getTasks(result.data))
   } catch (error) {
     console.log(error)
   }
