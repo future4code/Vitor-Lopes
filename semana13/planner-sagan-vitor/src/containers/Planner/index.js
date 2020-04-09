@@ -51,7 +51,7 @@ const PaddingBetweenTasks = styled.div`
   padding-top: 3px;
 `
 
-class Planner extends React.Component {
+export class Planner extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
