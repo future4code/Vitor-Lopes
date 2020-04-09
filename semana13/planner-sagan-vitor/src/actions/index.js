@@ -28,22 +28,20 @@ export const getTasksList = () => async (dispatch) => {
   }
 }
 
-// export const createTask = (taskText, taskDay) => async () => {
-//   const dataTasks = {
-//     text: taskText,
-//     day: taskDay
-//   }
-//   try {
-//     const result = await axios.post(baseUrl,
-//       dataTasks,
-//       {
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       }
-//     )
-//     console.log(result.data)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+export const createTask = (taskContent) => async (dispatch) => {
+  try {
+    const result = await axios.post(baseUrl, taskContent,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+    console.log(result.data)
+    console.log(taskContent)
+    dispatch(getTasksList())
+  } catch (error) {
+    console.log(error)
+    console.log(taskContent)
+  }
+}
