@@ -5,10 +5,17 @@ import { shallow } from 'enzyme'
 
 describe('Checkout Planner Components', () => {
     test('ititial state', () => {
-        // const component = shallow(<Planner />)
-        const component = {}
+        const mockedTaskList = [{}]
+        const mockedGetTasks = jest.fn()
 
-        expect(component).toEqual({})
-        // expect(component.state().userInfo).toEqual({})
+        const component = shallow(
+            <Planner
+                taskList={mockedTaskList}
+                getTasks={mockedGetTasks}
+            />)
+
+        component.instance()
+
+        expect(mockedGetTasks).toHaveBeenCalledTimes(1)
     })
 })
