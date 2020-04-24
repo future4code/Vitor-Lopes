@@ -1,0 +1,24 @@
+{
+  "name": "dia5-sistema-bancario",
+  "version": "1.0.0",
+  "description": "Sistema Bancário",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^13.13.2",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Vitor-Lopes.git"
+  },
+  "author": "Vitor Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Vitor-Lopes/issues"
+  },
+  "homepage": "https://github.com/future4code/Vitor-Lopes#readme"
+}
