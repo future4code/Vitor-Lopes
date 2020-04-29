@@ -5,6 +5,7 @@ import { Industry } from './places/Industry'
 import { Commerce } from './places/Commerce'
 import { ResidentialClient } from './clients/ResidentialClient'
 import { CommercialClient } from './clients/CommercialClient '
+import { IndustrialClient } from './clients/IndustrialClient'
 
 // const newClient: Client = {
 //     name: "Vitor",
@@ -52,14 +53,29 @@ import { CommercialClient } from './clients/CommercialClient '
 //4-a) Possui os métodos dela, do Residence e do Client
 
 //exercício 05
-const newCommercialClient: CommercialClient= new CommercialClient('111.222.333.44/4444', 'jose da silva xavier', 666, 4590, 5, '11072-002')
-console.log(newCommercialClient.calculateBill())
-console.log(newCommercialClient.geFloorsQuantity())
-console.log(newCommercialClient.getCep())
-console.log(newCommercialClient.getCnpj())
+// const newCommercialClient: CommercialClient= new CommercialClient('111.222.333.44/4444', 'jose da silva xavier', 666, 4590, 5, '11072-002')
+// console.log(newCommercialClient.calculateBill())
+// console.log(newCommercialClient.geFloorsQuantity())
+// console.log(newCommercialClient.getCep())
+// console.log(newCommercialClient.getCnpj())
 /*5-a) São praticamente iguais, ambas implementam a Client, ambas mantém o cpf/cnpj 
 private. Os métodos também se assemelham.
   5-b) as diferenças são que a CommercialClient extende a Commerce e a 
 ResidentialClient extende a Residence. Há diferença no cálculo do consumo 
 de energia também
 */
+
+//Exercício 06
+// const newIndustrialClient: IndustrialClient = new IndustrialClient('ACME', 3000, 12000, 1234, 33, '11075-002')
+// console.log(newIndustrialClient.calculateBill())
+// console.log(newIndustrialClient.getCep())
+// console.log(newIndustrialClient.getIndustryNumber())
+// console.log(newIndustrialClient.getMachinesQuantity())
+/*6-a) Acredito que deva ser filha da Industry para ter acesso aos métodos dela
+  6-b) Implementa a Client pois necessita ter acesso ao método e aos atributos dela
+  6-c) eu creio que os setters sejam criados quando formos criar os clientes finais. 
+  Não lembro de ter criado nenhum setter nesse projeto até o momento.
+ */
+
+ //Exercício 07
+//ClientManager criado
