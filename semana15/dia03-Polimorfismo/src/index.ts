@@ -4,6 +4,7 @@ import { Residence } from './places/Residence'
 import { Industry } from './places/Industry'
 import { Commerce } from './places/Commerce'
 import { ResidentialClient } from './clients/ResidentialClient'
+import { CommercialClient } from './clients/CommercialClient '
 
 // const newClient: Client = {
 //     name: "Vitor",
@@ -43,9 +44,22 @@ import { ResidentialClient } from './clients/ResidentialClient'
 // console.log(newCommerce.getCep())
 
 //Exercício 04
-const newResidentialClient: ResidentialClient = new ResidentialClient('Vitor Lopes', 3, 1000, '333.333.333-33', 6, '11075-002')
-console.log(newResidentialClient.calculateBill())
-console.log(newResidentialClient.getCep())
-console.log(newResidentialClient.getCpf())
-console.log(newResidentialClient.getResidentsQuantity())
+// const newResidentialClient: ResidentialClient = new ResidentialClient('Vitor Lopes', 3, 1000, '333.333.333-33', 6, '11075-002')
+// console.log(newResidentialClient.calculateBill())
+// console.log(newResidentialClient.getCep())
+// console.log(newResidentialClient.getCpf())
+// console.log(newResidentialClient.getResidentsQuantity())
 //4-a) Possui os métodos dela, do Residence e do Client
+
+//exercício 05
+const newCommercialClient: CommercialClient= new CommercialClient('111.222.333.44/4444', 'jose da silva xavier', 666, 4590, 5, '11072-002')
+console.log(newCommercialClient.calculateBill())
+console.log(newCommercialClient.geFloorsQuantity())
+console.log(newCommercialClient.getCep())
+console.log(newCommercialClient.getCnpj())
+/*5-a) São praticamente iguais, ambas implementam a Client, ambas mantém o cpf/cnpj 
+private. Os métodos também se assemelham.
+  5-b) as diferenças são que a CommercialClient extende a Commerce e a 
+ResidentialClient extende a Residence. Há diferença no cálculo do consumo 
+de energia também
+*/
