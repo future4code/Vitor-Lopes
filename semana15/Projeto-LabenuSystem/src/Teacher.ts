@@ -1,7 +1,7 @@
 import { User } from "./User";
 import 'moment/locale/pt-br';
 
-enum TEACHER_SPECIALTY {
+export enum TEACHER_SPECIALTY {
   REACT = "REACT",
   REDUX = "REDUX",
   CSS = "CSS",
