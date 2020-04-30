@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "vitor lopes",
+    "email": "email@email.com",
+    "birthDate": 1985,
+    "hobbies": [
+      "o de seda"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rafael lopes",
+    "email": "email@email.com",
+    "birthDate": 1981,
+    "hobbies": [
+      "hobbie não é aquele elfo do HP?"
+    ]
+  }
+]

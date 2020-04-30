@@ -18,7 +18,7 @@ export class Student implements User {
   }
 
   public setNewStudent(student: Student): void {
-    const fileManager = new JSONFileManager('src/students.json');
+    const fileManager = new JSONFileManager('src/infoLabenu/students.json');
     let jsonData: Student[] = [];
     try {
       jsonData = fileManager.readFile();

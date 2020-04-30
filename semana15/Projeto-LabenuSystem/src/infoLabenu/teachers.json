@@ -1,1 +1,34 @@
-[{"id":1,"name":"Amanda Rangel","email":"email@email.com.br","specialties":["OOP"]}]
+[
+  {
+    "id": 1,
+    "name": "Amanda Rangel",
+    "email": "email@email.com.br",
+    "specialties": [
+      "OOP"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Soter Padua",
+    "email": "email@email.com.br",
+    "specialties": [
+      "OOP"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "João Golias",
+    "email": "email@email.com.br",
+    "specialties": [
+      "OOP"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "João Alves",
+    "email": "email@email.com.br",
+    "specialties": [
+      "OOP"
+    ]
+  }
+]
