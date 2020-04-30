@@ -1,5 +1,5 @@
 import { User } from "./User";
-import 'moment/locale/pt-br';
+import { JSONFileManager } from "./JSONFileManager";
 
 export enum TEACHER_SPECIALTY {
   REACT = "REACT",
@@ -17,8 +17,20 @@ export class Teacher implements User {
     public name: string,
     public email: string,
     public specialties: TEACHER_SPECIALTY[]
-  ) {
+  ) { }
 
+  public setNewTeacher(teacher: Teacher): void {
+    const fileManager = new JSONFileManager('src/infoLabenu/teachers.json');
+    let jsonData: Teacher[] = [];
+    try {
+      jsonData = fileManager.readFile();
+    } catch (e) {
+      console.log(e)
+    }
+    jsonData.push(teacher);
+    fileManager.writeFile(jsonData)
+    console.log(fileManager.readFile())
   }
-  
+
+
 }
