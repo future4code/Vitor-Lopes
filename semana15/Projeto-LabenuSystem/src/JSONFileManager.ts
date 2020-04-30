@@ -1,18 +1,18 @@
 import * as fs from 'fs'
 
-
 export class JSONFileManager {
+  constructor(private filePath: string) { }
 
-  fileName: string;
-
-  constructor(fileName: string) {
-    this.fileName = fileName
-  }
-  writeObjectToFile(objectToSave: Object) {
-    fs.writeFileSync(this.fileName, JSON.stringify(objectToSave, null, 2))
+  public setFilePath(path: string): void {
+    this.filePath = path;
   }
 
-  getObjectFromFIle(): Object {
-    return JSON.parse(fs.readFileSync(this.fileName).toString());
+  public writeFile(data: any): void {
+    fs.writeFileSync(this.filePath, JSON.stringify(data));
+  }
+
+  public readFile(): any {
+    const data = fs.readFileSync(this.filePath);
+    return JSON.parse(data.toString());
   }
 }
