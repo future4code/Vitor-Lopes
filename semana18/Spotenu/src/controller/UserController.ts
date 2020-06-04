@@ -40,10 +40,6 @@ export class UserController {
         1
       )
 
-      if (!req.body.nickname) {
-        throw new Error('teste')
-      }
-
       const accessToken = new Authenticator().generateToken({
         id
       }, process.env.ACCESS_TOKEN_EXPIRES_IN);
@@ -114,10 +110,6 @@ export class UserController {
         1
       )
 
-      if (!req.body.nickname) {
-        throw new Error('teste')
-      }
-
       const accessToken = new Authenticator().generateToken({
         id
       }, process.env.ACCESS_TOKEN_EXPIRES_IN);
@@ -145,6 +137,47 @@ export class UserController {
     }
   };
 
+  async bandSignup(req: Request, res: Response) {
+    try {
+      if (!req.body.name || !req.body.email || !req.body.password || !req.body.nickname) {
+        throw new Error("Todos os campos precisam ser preenchidos (name, email, password e nickname).")
+      }
+      if (req.body.password.length < 6) {
+        throw new Error("A senha precisa ter no mínimo 6 caracteres.")
+      }
+
+      const userData = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        nickname: req.body.nickname,
+        bandDescription: req.body.bandDescription
+      }
+
+      const id = new IdGenerator().generateId();
+
+      const hashManager = new HashManager();
+      const hashPassword = await hashManager.hash(userData.password)
+
+      const userBusiness = new UserBusiness();
+      await userBusiness.bandSignup(
+        id,
+        userData.name,
+        userData.email,
+        hashPassword,
+        userData.nickname,
+        userData.bandDescription,
+        0
+      )
+
+      res.status(200).send('Banda cadastrada com sucesso! Aguarde a aprovação de um Adm.')
+
+    } catch (err) {
+      res.status(400).send({ err: err.message })
+    } finally {
+      await BaseDataBase.destroyConnection();
+    }
+  }
 
   async refreshToken(req: Request, res: Response) {
     try {
