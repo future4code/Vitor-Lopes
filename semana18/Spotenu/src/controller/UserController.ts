@@ -76,14 +76,14 @@ export class UserController {
       }
       const admTokentToVerify = req.headers.authorization as string
       const token = new Authenticator().verify(admTokentToVerify)
-      
+
       const userIsAdmin = await new UserBusiness().admVerify(token.id)
-      
-      if(!userIsAdmin[0][0]) {
+
+      if (!userIsAdmin[0][0]) {
         throw new Error("Somente um perfil administrador pode criar outro administrador.")
       }
 
-      if(!token) {
+      if (!token) {
         throw new Error("Falha na autenticação.")
       }
 
@@ -109,26 +109,8 @@ export class UserController {
         1
       )
 
-      const accessToken = new Authenticator().generateToken({
-        id
-      }, process.env.ACCESS_TOKEN_EXPIRES_IN);
+      res.status(200).send(`Administrador criado com sucesso!`)
 
-      const refreshToken = new Authenticator().generateToken({
-        id,
-      }, process.env.REFRESH_TOKEN_EXPIRES_IN);
-
-      const refreshTokenDatabase = new RefreshTokenDatabase();
-      await refreshTokenDatabase.create(
-        refreshToken,
-        true,
-        id
-      );
-
-      res.status(200).send({
-        access_token: accessToken,
-        refresh_token: refreshToken
-      })
-      
     } catch (err) {
       res.status(400).send({ err: err.message })
     } finally {
