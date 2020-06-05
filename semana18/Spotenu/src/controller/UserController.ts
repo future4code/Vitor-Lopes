@@ -4,7 +4,6 @@ import { BaseDataBase } from "../data/BaseDatabase";
 import { IdGenerator } from "../services/IdGenerator";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
-import { UserDatabase } from "../data/UserDatabase";
 import { RefreshTokenDatabase } from "../data/RefreshTokenDatabase";
 
 export class UserController {
@@ -78,9 +77,9 @@ export class UserController {
       const admTokentToVerify = req.headers.authorization as string
       const token = new Authenticator().verify(admTokentToVerify)
       
-      const teste = await new UserBusiness().admVerify(token.id)
+      const userIsAdmin = await new UserBusiness().admVerify(token.id)
       
-      if(teste[0][0] == undefined) {
+      if(!userIsAdmin[0][0]) {
         throw new Error("Somente um perfil administrador pode criar outro administrador.")
       }
 
