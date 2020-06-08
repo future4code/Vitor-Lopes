@@ -7,7 +7,7 @@ export class MusicDatabase extends BaseDataBase {
     FROM ${BaseDataBase.USER_TABLE_NAME} 
     WHERE band_approval = 0 
     OR band_approval = 1;
-    `)
+    `)  
   }
   public async bandApprove(id: string) {
     return await super.getConnection().raw(`
@@ -17,11 +17,11 @@ export class MusicDatabase extends BaseDataBase {
     && band_approval = '0';
     `)
   }
-  public async bandSearchById(id: string) {
+  public async bandSearchByEmail(email: string) {
     return await super.getConnection().raw(`
-     SELECT id, band_approval
+     SELECT *
      FROM ${BaseDataBase.USER_TABLE_NAME} 
-     WHERE id = '${id}'
+     WHERE email = '${email}'
     `)
   }
 }

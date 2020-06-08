@@ -5,6 +5,8 @@ import { IdGenerator } from "../services/IdGenerator";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
 import { RefreshTokenDatabase } from "../data/RefreshTokenDatabase";
+import { MusicBusiness } from "../business/MusicBusiness";
+import { MusicDatabase } from "../data/MusicDatabase";
 
 export class UserController {
 
@@ -184,4 +186,24 @@ export class UserController {
       await BaseDataBase.destroyConnection();
     }
   }
+
+  async login(req: Request, res: Response) {
+    try {
+      // const username = req.body.username
+      const email = req.body.email
+      const password = req.body.password
+
+      if (!req.body.email || !req.body.password) {
+        throw new Error("Todos os campos precisam ser preenchidos (email/nickname e password).")
+      }
+      const userBusiness = await new UserBusiness().login(email, password)
+                 
+      res.status(200).send(userBusiness)
+
+    } catch (err) {
+      res.status(400).send({err: err.message})
+    } finally {
+      await BaseDataBase.destroyConnection();
+    }
+  }  
 }

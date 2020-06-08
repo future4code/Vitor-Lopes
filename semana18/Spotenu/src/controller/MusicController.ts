@@ -3,6 +3,7 @@ import { Authenticator } from "../services/Authenticator";
 import { MusicDatabase } from "../data/MusicDatabase";
 import { UserBusiness } from "../business/UserBusiness";
 import { BaseDataBase } from "../data/BaseDatabase";
+import { MusicBusiness } from "../business/MusicBusiness";
 
 export class MusicController {
 
@@ -35,7 +36,7 @@ export class MusicController {
 
       const userIsAdmin = await new UserBusiness().admVerify(token.id)
       if (!userIsAdmin[0][0]) {
-        throw new Error("Somente um perfil administrador pode criar outro administrador.")
+        throw new Error("Somente um perfil administrador pode aprovar uma banda.")
       }
 
       const id = req.body.id
