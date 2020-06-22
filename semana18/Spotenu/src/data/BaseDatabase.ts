@@ -8,6 +8,7 @@ export abstract class BaseDataBase {
 
   private static KNEX_CONNECTION: Knex | null = null;
   protected static USER_TABLE_NAME = "spotenu_users";
+  protected static GENRE_TABLE_NAME = "spotenu_genre";
   protected static REFRESHTOKEN_TABLE_NAME = "spotenu_refreshtoken";
 
 
