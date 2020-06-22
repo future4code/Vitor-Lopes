@@ -23,7 +23,7 @@ export class UserBusiness {
 
   public async login(email: string, password: string) {
 
-    const musicDatabase = await new MusicDatabase().bandSearchByEmail(email)
+    const musicDatabase = await new MusicDatabase().bandSearchByEmailOrNickname(email)
     const musicDatabaseRow = musicDatabase[0][0]
 
     console.log('musicDatabase[0][0] on Userbusiness ', musicDatabaseRow)
@@ -31,7 +31,7 @@ export class UserBusiness {
     if (!musicDatabaseRow) {
       throw new Error("Cadastro não identificado")
     }
-    const databasePassword = await new MusicDatabase().bandSearchByEmail(email)
+    const databasePassword = await new MusicDatabase().bandSearchByEmailOrNickname(email)
 
     if (!musicDatabaseRow) {
       throw new Error("Email ou password inválidos")
