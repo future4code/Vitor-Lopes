@@ -39,17 +39,17 @@ export class MusicController {
         throw new Error("Somente um perfil administrador pode aprovar uma banda.")
       }
 
-      const id = req.body.id
-      if (!req.body.id) {
+      const emailOrNickname = req.body.emailOrNickname
+      if (!req.body.emailOrNickname) {
         throw new Error("O campo da banda deve ser preenchido.")
       }
 
-      const bandSearchById = await new MusicDatabase().bandSearchById(id)
+      const bandSearchById = await new MusicDatabase().bandSearchByEmailOrNickname(emailOrNickname)
       if (!bandSearchById[0][0]) {
-        throw new Error("A id informada não existe.")
+        throw new Error("Usuário não encontrado.")
       }
 
-      const musicDatabase = await new MusicDatabase().bandApprove(id)
+      const musicDatabase = await new MusicBusiness().bandApprove(emailOrNickname)
       if (!musicDatabase[0].changedRows) {
         throw new Error("Esta banda ja foi aprovada!")
       }

@@ -9,19 +9,21 @@ export class MusicDatabase extends BaseDataBase {
     OR band_approval = 1;
     `)  
   }
-  public async bandApprove(id: string) {
+  public async bandApprove(emailOrNickname: string) {
     return await super.getConnection().raw(`
     UPDATE sagan_vitor_db.${BaseDataBase.USER_TABLE_NAME} 
     SET band_approval = '1' 
-    WHERE id = '${id}' 
-    && band_approval = '0';
+    WHERE name = '${emailOrNickname}'
+    OR nickname = '${emailOrNickname}' 
+    AND band_approval = '0';
     `)
   }
-  public async bandSearchByEmail(email: string) {
+  public async bandSearchByEmailOrNickname(emailOrNickname: string) {
     return await super.getConnection().raw(`
      SELECT *
      FROM ${BaseDataBase.USER_TABLE_NAME} 
-     WHERE email = '${email}'
+     WHERE email = '${emailOrNickname}'
+     OR nickname = '${emailOrNickname}';
     `)
   }
 }
