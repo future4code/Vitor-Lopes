@@ -26,4 +26,10 @@ export class MusicDatabase extends BaseDataBase {
      OR nickname = '${emailOrNickname}';
     `)
   }
+  public async addNewGenre(newGenreName: string, genreId: string) {
+    return await super.getConnection().raw(`
+    INSERT INTO ${BaseDataBase.GENRE_TABLE_NAME} 
+    (genre_id, genre_name) VALUES ('${genreId}', '${newGenreName}');
+    `)
+  }
 }
