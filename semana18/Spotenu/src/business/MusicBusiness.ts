@@ -14,4 +14,7 @@ export class MusicBusiness {
   public async addNewGenre(newGenreName: string, genreId: string) {
     return new MusicDatabase().addNewGenre(newGenreName, genreId)
   }
+  public async getAllGenres() {
+    return new MusicDatabase().getAllGenres()
+  }
 }

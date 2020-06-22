@@ -32,4 +32,9 @@ export class MusicDatabase extends BaseDataBase {
     (genre_id, genre_name) VALUES ('${genreId}', '${newGenreName}');
     `)
   }
+  public async getAllGenres() {
+    return await super.getConnection().raw(`
+      SELECT * FROM ${BaseDataBase.GENRE_TABLE_NAME};
+    `)
+  }
 }

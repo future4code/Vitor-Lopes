@@ -67,7 +67,7 @@ export class MusicController {
   async addNewGenre(req: Request, res: Response) {
     try {
       const newGenreName = req.body.newGenreName
-      
+
       if (!newGenreName) {
         throw new Error("Favor preencher o campo Gênero.")
       }
@@ -79,6 +79,19 @@ export class MusicController {
 
     } catch (err) {
       err.code === "ER_DUP_ENTRY" && res.status(400).send("Error. O gênero desejado ja existe.")
+      res.status(400).send(err.message)
+    } finally {
+      await BaseDataBase.destroyConnection();
+    }
+  }
+
+  async getAllGenres(req: Request, res: Response) {
+    try {
+      const allGenres = await new MusicBusiness().getAllGenres()
+
+      res.status(200).send(allGenres[0])
+
+    } catch (err) {
       res.status(400).send(err.message)
     } finally {
       await BaseDataBase.destroyConnection();
